@@ -2,6 +2,8 @@
 
 A party game for one room: a picture slowly un-blurs on the TV, everyone buzzes on their phone, and the host judges answers on a phone that's the only device that knows the solutions. See [SPEC.md](SPEC.md) for the rules and design.
 
+https://github.com/user-attachments/assets/ae633ec1-80e1-4104-a748-6bc79512185a
+
 Stack: Cloudflare Worker + Durable Objects (one per room, WebSockets) + R2 (images) + D1 (decks), with a Vite + React + TypeScript frontend.
 
 ## Develop
