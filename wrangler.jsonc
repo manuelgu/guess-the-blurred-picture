@@ -3,6 +3,9 @@
   "name": "guess-the-blurred-picture",
   "main": "./worker/index.ts",
   "compatibility_date": "2026-10-01",
+  "workers_dev": true,
+  // Per-version preview URLs would expose old builds; turn on if you want branch previews.
+  "preview_urls": false,
   "assets": {
     "not_found_handling": "single-page-application",
     "run_worker_first": ["/api/*"]
