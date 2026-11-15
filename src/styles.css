@@ -409,6 +409,38 @@ select:focus {
   border-top: 1px solid var(--line);
   flex-wrap: wrap;
 }
+/* Frameless small button (e.g. delete deck); turns into a red pill when armed. */
+.btn.bare-btn {
+  background: transparent;
+  border-color: transparent;
+  padding: 0.3rem 0.4rem;
+  opacity: 0.55;
+  flex: none;
+  white-space: nowrap;
+}
+.btn.bare-btn:hover,
+.btn.bare-btn:focus-visible,
+.btn.bare-btn.danger {
+  opacity: 1;
+}
+.btn.bare-btn.danger {
+  background: var(--bad);
+  padding: 0.3rem 0.7rem;
+}
+.wiki-ref {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+}
+.count-field {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.count-field input {
+  width: 6.5em;
+  padding: 0.45rem 0.6rem;
+}
 .pack-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -432,6 +464,19 @@ select:focus {
 }
 .pack:disabled {
   opacity: 0.6;
+}
+.notice {
+  margin-top: 0.75rem;
+  padding: 0.75rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--accent-2) 60%, transparent);
+  background: color-mix(in srgb, var(--accent-2) 10%, var(--bg-2));
+}
+.notice p {
+  margin: 0 0 0.6rem;
+}
+.notice .row {
+  flex-wrap: wrap;
 }
 .pack-emoji {
   font-size: 1.8rem;
@@ -927,8 +972,9 @@ select:focus {
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 3em 1.5em 1.2em;
-  background: linear-gradient(transparent, rgba(5, 3, 12, 0.92) 40%);
+  /* Bottom padding keeps the result text clear of the photo credit in the corner. */
+  padding: 2.2em 1.5em 2em;
+  background: linear-gradient(transparent, rgba(5, 3, 12, 0.8) 45%);
   text-align: center;
   animation: fade-up 0.5s ease-out;
 }
@@ -940,12 +986,22 @@ select:focus {
 }
 .result-answer {
   font-family: var(--font-display);
-  font-size: 3.6em;
+  font-size: 2.8em;
   font-weight: 800;
   line-height: 1.05;
+  text-wrap: balance;
+}
+.result-answer.long {
+  font-size: 2.1em;
+}
+.result-answer-sub {
+  font-size: 1.2em;
+  font-weight: 600;
+  opacity: 0.8;
+  margin-top: 0.1em;
 }
 .result-sub {
-  font-size: 1.4em;
+  font-size: 1.15em;
   font-weight: 700;
   margin-top: 0.2em;
 }
@@ -955,10 +1011,47 @@ select:focus {
 .result-banner.revealed .result-sub {
   color: var(--muted);
 }
-.credit {
-  margin-top: 0.6em;
-  font-size: 0.7em;
+/* Wikipedia summary at the top of the scoreboard column, after a picture is over. */
+.wiki-card {
+  flex: none;
+  background: var(--bg-2);
+  border-radius: 14px;
+  padding: 0.8em 0.9em;
+  animation: fade-up 0.4s ease-out;
+}
+.wiki-card h4 {
+  margin: 0 0 0.35em;
+  font-size: 1em;
+}
+.wiki-extract {
+  margin: 0;
+  font-size: 0.85em;
+  line-height: 1.45;
+  color: var(--text);
+  opacity: 0.9;
+  /* Number of lines is set inline from the space left above the scores (max 6). */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.wiki-source {
+  margin-top: 0.4em;
   color: var(--muted);
+  font-size: 0.7em;
+}
+/* Photo credit: small, tucked into the picture's bottom-left corner. */
+.credit {
+  position: absolute;
+  left: 0.8em;
+  bottom: 0.5em;
+  max-width: 45%;
+  font-size: 0.55em;
+  color: rgba(255, 255, 255, 0.55);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  z-index: 2;
+  pointer-events: none;
 }
 
 .scoreboard {
@@ -1017,6 +1110,35 @@ select:focus {
   font-family: var(--font-display);
   font-weight: 800;
   font-size: 1.15em;
+}
+/* Bigger groups: tighter rows (9+), smaller (15+), two columns (19+, up to the 40-player cap). */
+.scoreboard ol.dense,
+.scoreboard ol.denser,
+.scoreboard ol.two-col {
+  gap: 0.22em;
+}
+.scoreboard ol.dense li {
+  padding: 0.22em 0.6em;
+  font-size: 0.88em;
+}
+.scoreboard ol.denser li {
+  padding: 0.14em 0.55em;
+  font-size: 0.76em;
+  border-radius: 7px;
+}
+.scoreboard ol.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-flow: column;
+  column-gap: 0.4em;
+  align-content: start;
+}
+.scoreboard ol.two-col li {
+  padding: 0.12em 0.45em;
+  font-size: 0.68em;
+  border-radius: 6px;
+  grid-template-columns: 1.4em 1fr auto;
+  gap: 0.35em;
 }
 .scoreboard li.answering {
   background: var(--accent);

@@ -1,4 +1,4 @@
-import { MAX_DECK_PICTURES, REVEAL_MODES, type Deck, type Picture, type RevealModeSetting } from "../shared/types";
+import { MAX_DECK_PICTURES, REVEAL_MODES, WIKI_REF, type Deck, type Picture, type RevealModeSetting } from "../shared/types";
 import type { Env } from "./env";
 import { HttpError, randomId, sha256 } from "./http";
 
@@ -53,6 +53,8 @@ export function sanitizeDeck(input: unknown): Deck {
         if (dur) pic.durationSec = dur;
         const credit = str(p.credit, 300);
         if (credit) pic.credit = credit;
+        const wiki = str(p.wiki, 210);
+        if (WIKI_REF.test(wiki)) pic.wiki = wiki;
         return pic;
       })
       .filter((p): p is Picture => p !== null),

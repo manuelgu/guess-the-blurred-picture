@@ -473,6 +473,7 @@ export class Room extends DurableObject<Env> {
         pointsAwarded: r.pointsAwarded,
         answer: isHost || over ? pic.answer : null,
         credit: over || isHost ? (pic.credit ?? null) : null,
+        wiki: over || isHost ? (pic.wiki ?? null) : null,
       };
     }
     let nextAnswer: string | null = null;

@@ -1,4 +1,5 @@
-import type { CommonsResult, CreateRoomResponse, Deck } from "../shared/types";
+import type { CommonsResult, CreateRoomResponse, Deck, RevealModeSetting } from "../shared/types";
+import { savedDecks } from "./storage";
 
 export type { CommonsResult };
 
@@ -6,6 +7,8 @@ export class ApiError extends Error {
   constructor(
     public status: number,
     message: string,
+    /** The full JSON error body (e.g. `code`, `loaded`, `retryAfter`). */
+    public data: Record<string, unknown> = {},
   ) {
     super(message);
   }
@@ -16,8 +19,12 @@ async function call<T>(path: string, init: RequestInit & { deckKey?: string } = 
   if (init.deckKey) headers.set("x-deck-key", init.deckKey);
   if (init.body && typeof init.body === "string") headers.set("content-type", "application/json");
   const res = await fetch(path, { ...init, headers });
-  const data = await res.json().catch(() => ({}));
-  if (!res.ok) throw new ApiError(res.status, (data as { error?: string }).error ?? res.statusText);
+  const data: unknown = await res.json().catch(() => ({}));
+  if (!res.ok) {
+    // Error bodies normally are `{ error, ...details }`, but a proxy may send anything (or `null`).
+    const body = data && typeof data === "object" ? (data as Record<string, unknown>) : {};
+    throw new ApiError(res.status, typeof body.error === "string" ? body.error : res.statusText, body);
+  }
   return data as T;
 }
 
@@ -50,13 +57,13 @@ export const api = {
   searchCommons: (q: string, offset = 0) =>
     call<CommonsResult[]>(`/api/commons/search?q=${encodeURIComponent(q)}&offset=${offset}`),
   packs: () => call<PackInfo[]>("/api/packs"),
-  usePack: (packId: string, lang: string) =>
+  usePack: (packId: string, lang: string, allowPartial = false) =>
     call<{ id: string; key: string; title: string; count: number }>(`/api/packs/${packId}/use`, {
       method: "POST",
-      body: JSON.stringify({ lang }),
+      body: JSON.stringify({ lang, allowPartial }),
     }),
-  createRoom: (deckId: string, key: string, shuffle: boolean) =>
-    call<CreateRoomResponse>("/api/rooms", { method: "POST", body: JSON.stringify({ deckId, key, shuffle }) }),
+  createRoom: (deckId: string, key: string, opts: { shuffle: boolean; count?: number; mode?: RevealModeSetting }) =>
+    call<CreateRoomResponse>("/api/rooms", { method: "POST", body: JSON.stringify({ deckId, key, ...opts }) }),
 };
 
 export { imageUrl } from "../shared/types";
@@ -92,4 +99,17 @@ export async function resizeImage(file: File, maxSide = 1600): Promise<Blob> {
   return new Promise((resolve, reject) =>
     canvas.toBlob((b) => (b ? resolve(b) : reject(new Error("encode failed"))), "image/jpeg", 0.86),
   );
+}
+
+/**
+ * Delete a deck on the server and forget it in this browser. A deck that's already gone counts
+ * as deleted; any other failure is thrown and the deck stays in the saved list (we still need its key).
+ */
+export async function deleteSavedDeck(id: string, key: string): Promise<void> {
+  try {
+    await api.deleteDeck(id, key);
+  } catch (e) {
+    if (!(e instanceof ApiError && e.status === 404)) throw e;
+  }
+  savedDecks.remove(id);
 }

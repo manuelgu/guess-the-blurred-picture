@@ -22,7 +22,18 @@ export interface Picture {
   mode?: RevealModeSetting;
   durationSec?: number;
   credit?: string;
+  /** Wikipedia article about what's pictured, as "<lang>:<title>", e.g. "sv:Karlatornet". */
+  wiki?: string;
 }
+
+/**
+ * How we identify ourselves to Wikimedia (User-Agent policy: client/version plus contact info).
+ * The Worker sends it as User-Agent, the browser as Api-User-Agent (browsers can't set User-Agent).
+ */
+export const WIKIMEDIA_CLIENT = "BlurBuzzBot/0.2 (https://github.com/manuelgu/guess-the-blurred-picture)";
+
+/** "sv:Karlatornet" → { lang: "sv", title: "Karlatornet" } */
+export const WIKI_REF = /^([a-z]{2,3}):(.{1,200})$/;
 
 export interface Deck {
   title: string;
@@ -89,6 +100,8 @@ export interface RoundView {
   /** Only present for the host, or for everyone once solved/revealed. */
   answer: string | null;
   credit: string | null;
+  /** Wikipedia article ("sv:Karlatornet"); same visibility as `answer`. */
+  wiki: string | null;
 }
 
 export type GameEvent =

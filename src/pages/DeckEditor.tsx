@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { MAX_DECK_PICTURES, REVEAL_MODES, type Deck, type Picture, type RevealModeSetting } from "../../shared/types";
-import { ApiError, api, imageUrl, resizeImage, type CommonsResult } from "../api";
+import { api, deleteSavedDeck, imageUrl, resizeImage, type CommonsResult } from "../api";
 import { Centered, ModeSelect, useArmed } from "../components";
 import { useI18n } from "../i18n";
 import { navigate } from "../router";
@@ -187,18 +187,14 @@ export function DeckEditor({ id }: { id: string }) {
     deleted.current = true;
     await saveChain.current.catch(() => {});
     try {
-      await api.deleteDeck(id, key);
-    } catch (e) {
-      // Already gone is fine; anything else means the deck still exists, so keep its key.
-      if (!(e instanceof ApiError && e.status === 404)) {
-        deleted.current = false;
-        setDeleteArmed(null);
-        setSaveState("failed");
-        return;
-      }
+      await deleteSavedDeck(id, key);
+    } catch {
+      deleted.current = false;
+      setDeleteArmed(null);
+      setSaveState("failed");
+      return;
     }
     latest.current = null; // nothing to flush on unmount
-    savedDecks.remove(id);
     navigate("/");
   };
 
@@ -308,6 +304,14 @@ export function DeckEditor({ id }: { id: string }) {
                   <span className="muted small">s</span>
                 </div>
                 {p.credit && <span className="muted tiny">📷 {p.credit}</span>}
+                {p.wiki && (
+                  <span className="muted tiny wiki-ref">
+                    📖 {t("wikiShown")}: {p.wiki.replace(/^[a-z]+:/, "")}
+                    <button className="mini" onClick={() => updatePic(p.id, { wiki: undefined })} title={t("removeWiki")}>
+                      ✕
+                    </button>
+                  </span>
+                )}
               </div>
               <div className="pic-actions">
                 <button className="mini" onClick={() => movePic(i, -1)} disabled={i === 0} title={t("moveUp")}>

@@ -1,5 +1,5 @@
-import { emptyDeck, type CreateRoomResponse, type Deck } from "../shared/types";
-import { importCommonsBatch, importFromCommons, searchCommons } from "./commons";
+import { emptyDeck, REVEAL_MODES, type CreateRoomResponse, type Deck, type RevealModeSetting } from "../shared/types";
+import { commonsKey, importCommonsBatch, importFromCommons, searchCommons } from "./commons";
 import { createDeck, deleteDeck, loadDeck, sanitizeDeck, saveDeck } from "./decks";
 import type { Env } from "./env";
 import { HttpError, IMAGE_TYPE, imageExt, json, randomId } from "./http";
@@ -33,12 +33,21 @@ async function handleApi(req: Request, env: Env, url: URL): Promise<Response> {
 
   // --- Rooms ---
   if (a === "rooms" && !b && method === "POST") {
-    const body = (await req.json().catch(() => ({}))) as { deckId?: unknown; key?: unknown; shuffle?: boolean };
+    const body = (await req.json().catch(() => ({}))) as { deckId?: unknown; key?: unknown; shuffle?: boolean; count?: unknown; mode?: unknown };
     if (typeof body.deckId !== "string" || typeof body.key !== "string") throw new HttpError(400, "Missing deck");
     const deck = await loadDeck(env, body.deckId, body.key);
     const pictures = deck.pictures.filter((p) => p.answer.trim());
     if (pictures.length === 0) throw new HttpError(400, "Deck has no pictures with answers");
-    const roomDeck: Deck = { ...deck, pictures: body.shuffle ? shuffle(pictures) : pictures };
+    const ordered = body.shuffle ? shuffle(pictures) : pictures;
+    // Optional "play only N pictures": the first N after shuffling (or in deck order).
+    const count = Number(body.count);
+    const limit = Number.isInteger(count) && count > 0 ? count : ordered.length;
+    let roomDeck: Deck = { ...deck, pictures: ordered.slice(0, limit) };
+    // Optional reveal-mode override for this game only: applies to every picture, including per-picture modes.
+    if (typeof body.mode === "string" && (body.mode === "random" || (REVEAL_MODES as readonly string[]).includes(body.mode))) {
+      const mode = body.mode as RevealModeSetting;
+      roomDeck = { ...roomDeck, defaultMode: mode, pictures: roomDeck.pictures.map(({ mode: _m, ...p }) => p) };
+    }
     for (let attempt = 0; attempt < 12; attempt++) {
       const code = roomCode();
       const stub = env.ROOMS.get(env.ROOMS.idFromName(code));
@@ -126,16 +135,40 @@ async function handleApi(req: Request, env: Env, url: URL): Promise<Response> {
   if (a === "packs" && b && c === "use" && method === "POST") {
     const pack = PACKS.find((p) => p.id === b);
     if (!pack) throw new HttpError(404, "Pack not found");
-    const { lang } = (await req.json().catch(() => ({}))) as { lang?: unknown };
-    const imported = await importCommonsBatch(env, pack.pictures.map((p) => p.file));
+    const { lang, allowPartial } = (await req.json().catch(() => ({}))) as { lang?: unknown; allowPartial?: unknown };
+    // "Use what arrived" builds the deck from stored pictures only, without contacting Wikimedia
+    // (it's offered exactly when Wikimedia is struggling or asked us to wait).
+    const usePartial = allowPartial === true;
+    const { images: imported, retryable, retryAfterSec } = await importCommonsBatch(
+      env,
+      pack.pictures.map((p) => p.file),
+      { cacheOnly: usePartial },
+    );
+    const imageFor = (p: { file: string }) => imported.get(commonsKey(p.file));
+    const loaded = pack.pictures.filter(imageFor).length;
+    const total = pack.pictures.length;
+    // Pictures that failed permanently (gone from Commons…) are simply left out; retrying won't help.
+    // Temporary failures are reported instead of quietly creating a short deck: the user can retry
+    // (downloaded pictures are kept, so a retry only fetches the rest) or accept what arrived.
+    if (retryable.length > 0 && !(usePartial && loaded > 0)) {
+      throw new HttpError(503, `Only ${loaded} of ${total} pictures could be downloaded from Wikimedia.`, {
+        code: "pack-incomplete",
+        loaded,
+        total,
+        retryAfter: retryAfterSec,
+      });
+    }
+    if (loaded === 0) throw new HttpError(502, "None of this pack's pictures are available on Wikimedia Commons.");
     const deck: Deck = {
       // Own-property check: an untrusted lang like "constructor" must not pick up an inherited value.
       title: typeof lang === "string" && Object.hasOwn(pack.title, lang) ? pack.title[lang as keyof Pack["title"]] : pack.title.en,
       defaultMode: pack.defaultMode,
       defaultDurationSec: 30,
       pictures: shuffle(pack.pictures).flatMap((p) => {
-        const img = imported.get(p.file);
-        return img ? [{ id: randomId(8), imageKey: img.imageKey, answer: p.answer, credit: img.credit }] : [];
+        const img = imageFor(p);
+        return img
+          ? [{ id: randomId(8), imageKey: img.imageKey, answer: p.answer, credit: img.credit, ...(p.wiki ? { wiki: p.wiki } : {}) }]
+          : [];
       }),
     };
     return json({ ...(await createDeck(env, deck)), title: deck.title, count: deck.pictures.length });
@@ -151,7 +184,7 @@ export default {
       try {
         return await handleApi(req, env, url);
       } catch (err) {
-        if (err instanceof HttpError) return json({ error: err.message }, err.status);
+        if (err instanceof HttpError) return json({ ...err.data, error: err.message }, err.status);
         console.error(err);
         return json({ error: "Internal error" }, 500);
       }

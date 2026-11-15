@@ -48,10 +48,14 @@ export function ModeSelect({
   value,
   onChange,
   allowDefault,
+  defaultLabel,
 }: {
   value: RevealModeSetting | undefined;
   onChange: (v: RevealModeSetting | undefined) => void;
+  /** Offer an empty "use the default" option (value undefined). */
   allowDefault?: boolean;
+  /** Label for that option; defaults to "Deck default". */
+  defaultLabel?: string;
 }) {
   const { t } = useI18n();
   const modes: RevealModeSetting[] = ["random", ...REVEAL_MODES];
@@ -60,7 +64,7 @@ export function ModeSelect({
       value={value ?? ""}
       onChange={(e) => onChange((e.target.value || undefined) as RevealModeSetting | undefined)}
     >
-      {allowDefault && <option value="">{t("deckDefault")}</option>}
+      {allowDefault && <option value="">{defaultLabel ?? t("deckDefault")}</option>}
       {modes.map((m) => (
         <option key={m} value={m}>
           {t(`mode_${m}`)}

@@ -1,4 +1,4 @@
-import { createContext, useCallback, useContext, useState, type ReactNode } from "react";
+import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from "react";
 import { storage } from "./storage";
 
 export type Lang = "en" | "de" | "sv";
@@ -23,6 +23,9 @@ const en = {
   builtInPacks: "Built-in packs",
   usePack: "Use pack",
   preparingPack: "Preparing pictures…",
+  packIncomplete: "only {loaded} of {total} pictures could be downloaded from Wikimedia right now. The ones that arrived are kept, so trying again only fetches the rest.",
+  tryAgain: "Try again",
+  useAnyway: "Use {n} pictures",
   pictures: "{n} pictures",
   play: "Play",
   edit: "Edit",
@@ -61,6 +64,15 @@ const en = {
   deckNotFound: "Deck not found, or the link is missing its key.",
   deleteDeck: "Delete deck",
   confirmDelete: "Really delete? Tap again.",
+  confirmDeleteShort: "Delete?",
+  pictureCount: "Pictures",
+  wikiShown: "Wikipedia text after the reveal",
+  removeWiki: "Don't show this Wikipedia text (e.g. after changing the picture)",
+  onlyN: "only {n} available",
+  allN: "all {n}",
+  modeLabel: "Reveal",
+  asInDeck: "As in deck: {mode}",
+  plusPerPicture: "(+ per picture)",
   emptyDeck: "No pictures yet. Upload photos or search Wikimedia Commons.",
   close: "Close",
   // modes
@@ -173,6 +185,9 @@ const de: Dict = {
   builtInPacks: "Fertige Pakete",
   usePack: "Paket nutzen",
   preparingPack: "Bilder werden vorbereitet…",
+  packIncomplete: "Nur {loaded} von {total} Bildern konnten gerade von Wikimedia geladen werden. Die geladenen bleiben gespeichert, ein neuer Versuch holt nur den Rest.",
+  tryAgain: "Nochmal versuchen",
+  useAnyway: "Mit {n} Bildern nutzen",
   pictures: "{n} Bilder",
   play: "Spielen",
   edit: "Bearbeiten",
@@ -210,6 +225,15 @@ const de: Dict = {
   deckNotFound: "Deck nicht gefunden oder dem Link fehlt der Schlüssel.",
   deleteDeck: "Deck löschen",
   confirmDelete: "Wirklich löschen? Nochmal tippen.",
+  confirmDeleteShort: "Löschen?",
+  pictureCount: "Bilder",
+  allN: "alle {n}",
+  wikiShown: "Wikipedia-Text nach der Auflösung",
+  removeWiki: "Diesen Wikipedia-Text nicht zeigen (z. B. nach Änderung des Bildes)",
+  onlyN: "nur {n} vorhanden",
+  modeLabel: "Aufdecken",
+  asInDeck: "Wie im Deck: {mode}",
+  plusPerPicture: "(+ pro Bild)",
   emptyDeck: "Noch keine Bilder. Lade Fotos hoch oder durchsuche Wikimedia Commons.",
   close: "Schließen",
   mode_random: "Zufällig",
@@ -315,6 +339,9 @@ const sv: Dict = {
   builtInPacks: "Färdiga paket",
   usePack: "Använd paket",
   preparingPack: "Förbereder bilder…",
+  packIncomplete: "bara {loaded} av {total} bilder kunde hämtas från Wikimedia just nu. De som kom fram sparas, så ett nytt försök hämtar bara resten.",
+  tryAgain: "Försök igen",
+  useAnyway: "Använd {n} bilder",
   pictures: "{n} bilder",
   play: "Spela",
   edit: "Redigera",
@@ -352,6 +379,15 @@ const sv: Dict = {
   deckNotFound: "Kortleken hittades inte, eller så saknar länken nyckeln.",
   deleteDeck: "Radera kortlek",
   confirmDelete: "Radera på riktigt? Tryck igen.",
+  confirmDeleteShort: "Radera?",
+  pictureCount: "Bilder",
+  allN: "alla {n}",
+  wikiShown: "Wikipedia-text efter avslöjandet",
+  removeWiki: "Visa inte den här Wikipedia-texten (t.ex. efter att bilden ändrats)",
+  onlyN: "bara {n} finns",
+  modeLabel: "Avslöjande",
+  asInDeck: "Som i kortleken: {mode}",
+  plusPerPicture: "(+ per bild)",
   emptyDeck: "Inga bilder än. Ladda upp foton eller sök på Wikimedia Commons.",
   close: "Stäng",
   mode_random: "Slumpad",
@@ -448,8 +484,13 @@ const DICTS: Record<Lang, Dict> = { en, de, sv };
 function detectLang(): Lang {
   const saved = storage.get<Lang>("lang");
   if (saved && Object.hasOwn(DICTS, saved)) return saved;
-  const nav = navigator.language.slice(0, 2);
-  return nav === "de" || nav === "sv" ? nav : "en";
+  // First supported language in the preference list, e.g. ["fr-FR", "de-DE"] → "de" (was "en").
+  const prefs = navigator.languages?.length ? navigator.languages : [navigator.language];
+  for (const tag of prefs) {
+    const base = tag.slice(0, 2).toLowerCase();
+    if (Object.hasOwn(DICTS, base)) return base as Lang;
+  }
+  return "en";
 }
 
 export type T = (key: StringKey, vars?: Record<string, string | number>) => string;
@@ -458,10 +499,13 @@ const Ctx = createContext<{ lang: Lang; setLang: (l: Lang) => void; t: T } | nul
 
 export function I18nProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Lang>(detectLang);
+  // Keep <html lang> in sync from the first render, not just after a manual switch.
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
   const setLang = useCallback((l: Lang) => {
     storage.set("lang", l);
     setLangState(l);
-    document.documentElement.lang = l;
   }, []);
   const t = useCallback<T>(
     (key, vars) => {

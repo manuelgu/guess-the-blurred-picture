@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { ANSWER_SECONDS, pointsFor, type RoomView, type RoundView } from "../../shared/types";
 import { Centered, ErrorScreen, QR, ranks, sortedPlayers } from "../components";
 import { LangPicker, useI18n } from "../i18n";
@@ -6,6 +6,7 @@ import { RevealStage, answerRemaining, extrapolate } from "../reveal/RevealStage
 import { audioReady, sfx, unlockAudio } from "../sound";
 import { storage } from "../storage";
 import { useNow, useRoom } from "../useRoom";
+import { useWikiSummary } from "../wiki";
 
 type Style = "show" | "minimal";
 
@@ -291,23 +292,104 @@ function Stage({ s, round: r, receivedAt, style }: { s: RoomView; round: RoundVi
 
           {over && (
             <div className={`result-banner ${r.status}`}>
-              <div className="result-answer">{r.answer}</div>
+              <AnswerTitle answer={r.answer ?? ""} />
               <div className="result-sub">
                 {r.status === "solved" && winner
                   ? `${t("gotIt", { name: winner.name })}  +${r.pointsAwarded}`
                   : t("nobodyGotIt")}
               </div>
-              {r.credit && <div className="credit">📷 {r.credit}</div>}
             </div>
           )}
+          {over && r.credit && <div className="credit">📷 {r.credit}</div>}
         </div>
 
-        <Scoreboard s={s} round={r} showJoin={style === "show"} />
+        <Scoreboard s={s} round={r} showJoin={style === "show"} wiki={over ? r.wiki : null} />
       </div>
 
       {!s.hostConnected && <div className="host-warning">⚠ {t("hostDisconnected")}</div>}
     </div>
   );
+}
+
+/**
+ * "Uppsala domkyrka (Uppsala Cathedral)" → big "Uppsala domkyrka", small "Uppsala Cathedral" below.
+ * Only when the bracketed part is a word-like gloss: "Rocky (1976)" or "Pi (π)" stay on one line,
+ * since there the brackets are part of the answer.
+ */
+function AnswerTitle({ answer }: { answer: string }) {
+  const m = /^(.+?)\s*\(([^()]*\p{L}{3}[^()]*)\)$/u.exec(answer.trim());
+  const main = m ? m[1] : answer;
+  return (
+    <>
+      <div className={`result-answer ${main.length > 22 ? "long" : ""}`}>{main}</div>
+      {m && <div className="result-answer-sub">{m[2]}</div>}
+    </>
+  );
+}
+
+/** A few sentences from Wikipedia about what was pictured (only ever shown after the reveal). */
+/**
+ * Shown above the scores, but the scores come first: the card only uses the height left over
+ * (`room`, in px) and shows as many whole lines of the extract as fit, up to 6. If fewer than 2
+ * lines fit (many players), it isn't shown at all.
+ */
+function WikiCard({ wiki, room }: { wiki: string | null; room: number }) {
+  const { lang } = useI18n();
+  const info = useWikiSummary(wiki, lang);
+  const ref = useRef<HTMLElement>(null);
+  const [lines, setLines] = useState(6);
+  useLayoutEffect(() => {
+    const card = ref.current;
+    const p = card?.querySelector<HTMLElement>(".wiki-extract");
+    if (!card || !p) return;
+    const lineHeight = parseFloat(getComputedStyle(p).lineHeight) || 20;
+    const overhead = card.offsetHeight - p.offsetHeight; // title, source line, padding
+    setLines(Math.max(0, Math.min(6, Math.floor((room - overhead) / lineHeight))));
+  }, [room, info, lines]);
+  if (!info) return null;
+  // Source line sits outside the clamped paragraph so a long extract can't cut it off.
+  return (
+    <section
+      ref={ref}
+      className="wiki-card"
+      lang={info.lang}
+      // Hidden but still laid out (out of flow), so it can be measured again when room grows.
+      style={lines < 2 ? { position: "absolute", visibility: "hidden", pointerEvents: "none" } : undefined}
+      aria-hidden={lines < 2 || undefined}
+    >
+      <h4>{info.title}</h4>
+      <p className="wiki-extract" style={{ WebkitLineClamp: Math.max(lines, 2), lineClamp: Math.max(lines, 2) }}>
+        {info.extract}
+      </p>
+      <div className="wiki-source">Wikipedia</div>
+    </section>
+  );
+}
+
+/** Height (px) left in the scoreboard after the title, every player row and the join box. */
+function useLeftoverHeight(dep: unknown) {
+  const ref = useRef<HTMLElement>(null);
+  const [room, setRoom] = useState(0);
+  useLayoutEffect(() => {
+    const aside = ref.current;
+    if (!aside) return;
+    const measure = () => {
+      const cs = getComputedStyle(aside);
+      const gap = parseFloat(cs.rowGap) || 0;
+      let used = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom);
+      for (const el of Array.from(aside.children) as HTMLElement[]) {
+        if (el.classList.contains("wiki-card")) continue;
+        // The list's full height, even while it's squeezed (scrollHeight).
+        used += (el.tagName === "OL" ? el.scrollHeight : el.offsetHeight) + gap;
+      }
+      setRoom(aside.clientHeight - used - gap); // gap between the card and the title
+    };
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(aside);
+    return () => ro.disconnect();
+  }, [dep]);
+  return [ref, room] as const;
 }
 
 function TimerRing({ remainingMs, totalMs }: { remainingMs: number; totalMs: number }) {
@@ -332,13 +414,30 @@ function TimerRing({ remainingMs, totalMs }: { remainingMs: number; totalMs: num
   );
 }
 
-function Scoreboard({ s, round, showJoin }: { s: RoomView; round: RoundView; showJoin: boolean }) {
+function Scoreboard({
+  s,
+  round,
+  showJoin,
+  wiki,
+}: {
+  s: RoomView;
+  round: RoundView;
+  showJoin: boolean;
+  wiki: string | null;
+}) {
   const { t } = useI18n();
   const rk = ranks(s.players);
+  const [ref, room] = useLeftoverHeight(`${s.players.length}|${showJoin}|${wiki}`);
   return (
-    <aside className="scoreboard">
+    <aside className="scoreboard" ref={ref}>
+      <WikiCard wiki={wiki} room={room} />
       <h3>{t("scores")}</h3>
-      <ol>
+      {/* Rows get tighter as the group grows, so everyone fits on the TV without scrolling. */}
+      <ol
+        className={s.players.length > 18 ? "two-col" : s.players.length > 14 ? "denser" : s.players.length > 8 ? "dense" : ""}
+        // Two columns fill top-to-bottom, so ranks read down the left column first.
+        style={s.players.length > 18 ? { gridTemplateRows: `repeat(${Math.ceil(s.players.length / 2)}, auto)` } : undefined}
+      >
         {sortedPlayers(s.players).map((p) => {
           const cls = [
             round.queue[0] === p.id && round.status === "answering" ? "answering" : "",
