@@ -1,0 +1,51 @@
+# Built-in packs are data, not code: changes under packs/ are validated and uploaded to R2 here,
+# without deploying the Worker (Cloudflare Workers Builds ignores packs/**), so running games
+# are never interrupted. See scripts/sync-packs.ts.
+name: Packs
+
+on:
+  # Everything the validation or the upload depends on, so e.g. a change to REVEAL_MODES that
+  # would invalidate a pack fails here instead of silently hiding the pack.
+  pull_request:
+    paths: ["packs/**", "shared/packs.ts", "shared/types.ts", "scripts/sync-packs.ts", "wrangler.jsonc", "package-lock.json", ".github/workflows/packs.yml"]
+  push:
+    branches: [main]
+    paths: ["packs/**", "shared/packs.ts", "shared/types.ts", "scripts/sync-packs.ts", "wrangler.jsonc", "package-lock.json", ".github/workflows/packs.yml"]
+  # Manual re-sync, e.g. after restoring the bucket. Always uploads the tip of main.
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# One sync at a time, so an upload that started earlier can never land after a later one.
+concurrency:
+  group: packs-${{ github.event_name == 'pull_request' && github.ref || 'sync' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  packs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      # Syncs always upload the current tip of main, not the commit that triggered the run: a re-run of
+      # an old workflow, or a run that a code-only push overtook, then still uploads the newest packs.
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'pull_request' && github.sha || 'main' }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+
+      - name: Validate
+        if: github.event_name == 'pull_request'
+        run: npm run sync-packs -- --check --commons
+
+      - name: Validate and upload
+        if: github.event_name != 'pull_request'
+        run: npm run sync-packs -- --remote --commons
+        env:
+          # Token with only "Workers R2 Storage: Edit": it cannot deploy code.
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

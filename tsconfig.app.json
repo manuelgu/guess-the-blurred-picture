@@ -10,6 +10,7 @@
     "skipLibCheck": true,
     "isolatedModules": true,
     "noUnusedLocals": true,
+    "allowImportingTsExtensions": true,
     "tsBuildInfoFile": "./node_modules/.tmp/app.tsbuildinfo"
   },
   "include": ["src", "shared"]

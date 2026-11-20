@@ -1,4 +1,4 @@
-import { MAX_DECK_PICTURES, REVEAL_MODES, WIKI_REF, type Deck, type Picture, type RevealModeSetting } from "../shared/types";
+import { isRevealModeSetting, MAX_ANSWER_LENGTH, MAX_DECK_PICTURES, WIKI_REF, type Deck, type Picture } from "../shared/types";
 import type { Env } from "./env";
 import { HttpError, randomId, sha256 } from "./http";
 
@@ -18,8 +18,6 @@ async function ensureSchema(env: Env) {
   schemaReady = true;
 }
 
-const MODES: readonly string[] = [...REVEAL_MODES, "random"];
-
 function str(v: unknown, max: number): string {
   return typeof v === "string" ? v.slice(0, max) : "";
 }
@@ -37,7 +35,7 @@ export function sanitizeDeck(input: unknown): Deck {
   const seenIds = new Set<string>();
   return {
     title: str(d.title, 80),
-    defaultMode: (MODES.includes(d.defaultMode as string) ? d.defaultMode : "random") as RevealModeSetting,
+    defaultMode: isRevealModeSetting(d.defaultMode) ? d.defaultMode : "random",
     defaultDurationSec: duration(d.defaultDurationSec) ?? 30,
     pictures: pictures
       .map((raw): Picture | null => {
@@ -47,8 +45,8 @@ export function sanitizeDeck(input: unknown): Deck {
         let id = str(p.id, 40);
         if (!id || seenIds.has(id)) id = randomId(8);
         seenIds.add(id);
-        const pic: Picture = { id, imageKey, answer: str(p.answer, 120) };
-        if (MODES.includes(p.mode as string)) pic.mode = p.mode as RevealModeSetting;
+        const pic: Picture = { id, imageKey, answer: str(p.answer, MAX_ANSWER_LENGTH) };
+        if (isRevealModeSetting(p.mode)) pic.mode = p.mode;
         const dur = duration(p.durationSec);
         if (dur) pic.durationSec = dur;
         const credit = str(p.credit, 300);

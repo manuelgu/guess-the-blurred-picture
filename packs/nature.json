@@ -1,0 +1,142 @@
+{
+  "id": "nature",
+  "title": {
+    "en": "Natural wonders",
+    "de": "Naturwunder",
+    "sv": "Naturens underverk"
+  },
+  "emoji": "🏔️",
+  "defaultMode": "blur",
+  "pictures": [
+    {
+      "answer": "Grand Canyon",
+      "file": "File:Canyon River Tree (165872763).jpeg",
+      "wiki": "en:Grand Canyon"
+    },
+    {
+      "answer": "Niagara Falls",
+      "file": "File:3Falls Niagara.jpg",
+      "wiki": "en:Niagara Falls"
+    },
+    {
+      "answer": "Mount Everest",
+      "file": "File:Mt. Everest from Gokyo Ri November 5, 2012.jpg",
+      "wiki": "en:Mount Everest"
+    },
+    {
+      "answer": "Uluru",
+      "file": "File:ULURU.jpg",
+      "wiki": "en:Uluru"
+    },
+    {
+      "answer": "Great Barrier Reef",
+      "file": "File:ISS-45 StoryOfWater, Great Barrier Reef, Australia.jpg",
+      "wiki": "en:Great Barrier Reef"
+    },
+    {
+      "answer": "Victoria Falls",
+      "file": "File:Cataratas Victoria, Zambia-Zimbabue, 2018-07-27, DD 04.jpg",
+      "wiki": "en:Victoria Falls"
+    },
+    {
+      "answer": "Mount Fuji",
+      "file": "File:View of Mount Fuji from Ōwakudani 20211202.jpg",
+      "wiki": "en:Mount Fuji"
+    },
+    {
+      "answer": "Ha Long Bay",
+      "file": "File:Ha Long Bay in 2019.jpg",
+      "wiki": "en:Ha Long Bay"
+    },
+    {
+      "answer": "Matterhorn",
+      "file": "File:Matterhorn from Domhütte - 2.jpg",
+      "wiki": "en:Matterhorn"
+    },
+    {
+      "answer": "Iguazu Falls",
+      "file": "File:Aerial Foz de Iguaçu 26 Nov 2005.jpg",
+      "wiki": "en:Iguazu Falls"
+    },
+    {
+      "answer": "Antelope Canyon",
+      "file": "File:USA Antelope-Canyon.jpg",
+      "wiki": "en:Antelope Canyon"
+    },
+    {
+      "answer": "Giant's Causeway",
+      "file": "File:Causeway-code poet-4.jpg",
+      "wiki": "en:Giant's Causeway"
+    },
+    {
+      "answer": "Mount Kilimanjaro",
+      "file": "File:Kilimanjaro from Amboseli.jpg",
+      "wiki": "en:Mount Kilimanjaro"
+    },
+    {
+      "answer": "Old Faithful",
+      "file": "File:Yellowstone National Park (WY, USA), Old Faithful Geyser -- 2022 -- 2599.jpg",
+      "wiki": "en:Old Faithful"
+    },
+    {
+      "answer": "Table Mountain",
+      "file": "File:Table Mountain DanieVDM.jpg",
+      "wiki": "en:Table Mountain"
+    },
+    {
+      "answer": "Pamukkale",
+      "file": "File:Pamukkale, Denizli 2026 68.jpg",
+      "wiki": "en:Pamukkale"
+    },
+    {
+      "answer": "Preikestolen",
+      "file": "File:Lyse Fjord et Preikestolen.jpg",
+      "wiki": "en:Preikestolen"
+    },
+    {
+      "answer": "Geirangerfjord",
+      "file": "File:Geirangerfjord .jpg",
+      "wiki": "en:Geirangerfjord"
+    },
+    {
+      "answer": "Perito Moreno Glacier",
+      "file": "File:Perito Moreno Glacier 2023.jpg",
+      "wiki": "en:Perito Moreno Glacier"
+    },
+    {
+      "answer": "Zhangjiajie",
+      "file": "File:1 tianzishan wulingyuan zhangjiajie 2012.jpg",
+      "wiki": "en:Zhangjiajie National Forest Park"
+    },
+    {
+      "answer": "Half Dome",
+      "file": "File:Half Dome with Eastern Yosemite Valley (Zuschnitt).jpg",
+      "wiki": "en:Half Dome"
+    },
+    {
+      "answer": "Northern lights (aurora)",
+      "file": "File:Aurora borealis over Eielson Air Force Base, Alaska.jpg",
+      "wiki": "en:Aurora"
+    },
+    {
+      "answer": "Bryce Canyon",
+      "file": "File:Inspiration Point Bryce Canyon November 2018 panorama.jpg",
+      "wiki": "en:Bryce Canyon National Park"
+    },
+    {
+      "answer": "Lake Bled",
+      "file": "File:Lake Bled from the Mountain.jpg",
+      "wiki": "en:Lake Bled"
+    },
+    {
+      "answer": "Dead Sea",
+      "file": "File:Dead Sea beach 00.JPG",
+      "wiki": "en:Dead Sea"
+    },
+    {
+      "answer": "Sahara",
+      "file": "File:Sahara real color.jpg",
+      "wiki": "en:Sahara"
+    }
+  ]
+}

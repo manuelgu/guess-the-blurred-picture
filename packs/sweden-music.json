@@ -1,0 +1,132 @@
+{
+  "id": "sweden-music",
+  "title": {
+    "en": "Swedish music",
+    "de": "Schwedische Musik",
+    "sv": "Svensk musik"
+  },
+  "emoji": "🎤",
+  "defaultMode": "pixelate",
+  "pictures": [
+    {
+      "answer": "Loreen",
+      "file": "File:Loreen - Melodifestivalen 2023, Malmö 118 (cropped).jpg",
+      "wiki": "en:Loreen (singer)"
+    },
+    {
+      "answer": "Måns Zelmerlöw",
+      "file": "File:Melodifestivalen 2025 deltävling 4 Malmö Måns Zelmerlöw presentation 03.jpg",
+      "wiki": "en:Måns Zelmerlöw"
+    },
+    {
+      "answer": "Carola",
+      "file": "File:Carola Häggkvist in June 2015-3.jpg",
+      "wiki": "en:Carola Häggkvist"
+    },
+    {
+      "answer": "Robyn",
+      "file": "File:Robyn face.jpg",
+      "wiki": "en:Robyn"
+    },
+    {
+      "answer": "Avicii",
+      "file": "File:Avicii 2014 003cr.jpg",
+      "wiki": "en:Avicii"
+    },
+    {
+      "answer": "Zara Larsson",
+      "file": "File:Zara Larsson Midnight Sun European Tour (cropped) (cropped).jpg",
+      "wiki": "en:Zara Larsson"
+    },
+    {
+      "answer": "Roxette",
+      "file": "File:Roxette at the Beacon, September 2012.jpg",
+      "wiki": "en:Roxette"
+    },
+    {
+      "answer": "Europe",
+      "file": "File:Europe live in Tønsberg 2025 (cropped).jpg",
+      "wiki": "en:Europe (band)"
+    },
+    {
+      "answer": "First Aid Kit",
+      "file": "File:Coachella18W1-208 (42057786281).jpg",
+      "wiki": "en:First Aid Kit (band)"
+    },
+    {
+      "answer": "Max Martin",
+      "file": "File:MaxMartin.jpg",
+      "wiki": "en:Max Martin"
+    },
+    {
+      "answer": "Tove Lo",
+      "file": "File:Tove Lo (2) By Daniel Åhs Karlsson.jpeg",
+      "wiki": "en:Tove Lo"
+    },
+    {
+      "answer": "Lykke Li",
+      "file": "File:Lykke Li 4.jpg",
+      "wiki": "en:Lykke Li"
+    },
+    {
+      "answer": "The Cardigans",
+      "file": "File:CardigansHamm071218-39 (32384726568).jpg",
+      "wiki": "en:The Cardigans"
+    },
+    {
+      "answer": "José González",
+      "file": "File:POS17 @Kristsll-640 (36005372005) (cropped).jpg",
+      "wiki": "en:José González (singer)"
+    },
+    {
+      "answer": "Sabaton",
+      "file": "File:Hellfest2017Sabaton 01.jpg",
+      "wiki": "en:Sabaton (band)"
+    },
+    {
+      "answer": "Charlotte Perrelli",
+      "file": "File:Charlotte Perrelli, Melodifestivalen 2017 (cropped).jpg",
+      "wiki": "en:Charlotte Perrelli"
+    },
+    {
+      "answer": "Cornelia Jakobs",
+      "file": "File:Cornelia Jakobs - Melodifestivalen 2022, finalen, torsdagen 114.jpg",
+      "wiki": "en:Cornelia Jakobs"
+    },
+    {
+      "answer": "Danny Saucedo",
+      "file": "File:Danny Saucedo - Melodifestivalen 2024-3.jpg",
+      "wiki": "en:Danny Saucedo"
+    },
+    {
+      "answer": "Ghost",
+      "file": "File:2023 Sweden Rock - 4309 (53048871172).jpg",
+      "wiki": "en:Ghost (Swedish band)"
+    },
+    {
+      "answer": "Laleh",
+      "file": "File:Laleh promotional photo in 2016.jpg",
+      "wiki": "en:Laleh (singer)"
+    },
+    {
+      "answer": "Veronica Maggio",
+      "file": "File:Veronica Maggio - Homecoming Festival-4 (cropped).jpg",
+      "wiki": "en:Veronica Maggio"
+    },
+    {
+      "answer": "ABBA",
+      "file": "File:ABBA - TopPop 1974 5.png",
+      "wiki": "sv:ABBA"
+    },
+    {
+      "answer": "Ace of Base",
+      "file": "File:Aob tour.jpg",
+      "wiki": "sv:Ace of Base"
+    },
+    {
+      "answer": "Swedish House Mafia",
+      "file": "File:Swedish house mafia 2.jpg",
+      "wiki": "sv:Swedish House Mafia"
+    }
+  ]
+}

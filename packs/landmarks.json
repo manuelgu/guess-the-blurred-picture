@@ -1,0 +1,132 @@
+{
+  "id": "landmarks",
+  "title": {
+    "en": "World landmarks",
+    "de": "Wahrzeichen der Welt",
+    "sv": "Världens landmärken"
+  },
+  "emoji": "🗼",
+  "defaultMode": "zoom",
+  "pictures": [
+    {
+      "answer": "Eiffel Tower",
+      "file": "File:Tour Eiffel Wikimedia Commons (cropped).jpg",
+      "wiki": "en:Eiffel Tower"
+    },
+    {
+      "answer": "Statue of Liberty",
+      "file": "File:Front view of Statue of Liberty (cropped).jpg",
+      "wiki": "en:Statue of Liberty"
+    },
+    {
+      "answer": "Colosseum",
+      "file": "File:Colosseo 2020.jpg",
+      "wiki": "en:Colosseum"
+    },
+    {
+      "answer": "Taj Mahal",
+      "file": "File:Taj Mahal (Edited).jpeg",
+      "wiki": "en:Taj Mahal"
+    },
+    {
+      "answer": "Sydney Opera House",
+      "file": "File:Sydney Opera House 2026.jpg",
+      "wiki": "en:Sydney Opera House"
+    },
+    {
+      "answer": "Golden Gate Bridge",
+      "file": "File:Golden Gate Bridge as seen from Battery East.jpg",
+      "wiki": "en:Golden Gate Bridge"
+    },
+    {
+      "answer": "Big Ben (Elizabeth Tower)",
+      "file": "File:Elizabeth Tower and the north front of the Palace of Westminster, London.jpg",
+      "wiki": "en:Big Ben"
+    },
+    {
+      "answer": "Machu Picchu",
+      "file": "File:Machu Picchu, 2023 (012).jpg",
+      "wiki": "en:Machu Picchu"
+    },
+    {
+      "answer": "Christ the Redeemer",
+      "file": "File:Christ the Redeemer - Cristo Redentor.jpg",
+      "wiki": "en:Christ the Redeemer (statue)"
+    },
+    {
+      "answer": "Great Wall of China",
+      "file": "File:The Great Wall of China at Jinshanling-edit.jpg",
+      "wiki": "en:Great Wall of China"
+    },
+    {
+      "answer": "Leaning Tower of Pisa",
+      "file": "File:Italy - Pisa - Leaning Tower.jpg",
+      "wiki": "en:Leaning Tower of Pisa"
+    },
+    {
+      "answer": "Brandenburg Gate",
+      "file": "File:Brandenburger Tor abends.jpg",
+      "wiki": "en:Brandenburg Gate"
+    },
+    {
+      "answer": "Sagrada Família",
+      "file": "File:SF maig 2 cropped.jpg",
+      "wiki": "en:Sagrada Família"
+    },
+    {
+      "answer": "Stonehenge",
+      "file": "File:Stonehenge2007 07 30.jpg",
+      "wiki": "en:Stonehenge"
+    },
+    {
+      "answer": "Petra",
+      "file": "File:Al Deir Petra.JPG",
+      "wiki": "en:Petra"
+    },
+    {
+      "answer": "Burj Khalifa",
+      "file": "File:Burj Khalifa (worlds tallest building) and the Dubai skyline (25781049892).jpg",
+      "wiki": "en:Burj Khalifa"
+    },
+    {
+      "answer": "Neuschwanstein Castle",
+      "file": "File:Schloss Neuschwanstein 2013.jpg",
+      "wiki": "en:Neuschwanstein Castle"
+    },
+    {
+      "answer": "Mount Rushmore",
+      "file": "File:Mount Rushmore detail view (100MP).jpg",
+      "wiki": "en:Mount Rushmore"
+    },
+    {
+      "answer": "Angkor Wat",
+      "file": "File:Angkor Wat.jpg",
+      "wiki": "en:Angkor Wat"
+    },
+    {
+      "answer": "Moai (Easter Island)",
+      "file": "File:AhuTongariki.JPG",
+      "wiki": "en:Moai"
+    },
+    {
+      "answer": "Atomium",
+      "file": "File:The Atomium during civil twilight (DSCF1135).jpg",
+      "wiki": "en:Atomium"
+    },
+    {
+      "answer": "Tower Bridge",
+      "file": "File:Tower Bridge at Dawn.jpg",
+      "wiki": "en:Tower Bridge"
+    },
+    {
+      "answer": "Moscow Kremlin",
+      "file": "File:Moscow Kremlin (8281675670).jpg",
+      "wiki": "en:Moscow Kremlin"
+    },
+    {
+      "answer": "Hagia Sophia",
+      "file": "File:Hagia Sophia (228968325).jpeg",
+      "wiki": "en:Hagia Sophia"
+    }
+  ]
+}

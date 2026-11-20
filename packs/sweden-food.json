@@ -1,0 +1,127 @@
+{
+  "id": "sweden-food",
+  "title": {
+    "en": "Swedish food & fika",
+    "de": "Schwedisches Essen & Fika",
+    "sv": "Fika & husmanskost"
+  },
+  "emoji": "🥐",
+  "defaultMode": "blur",
+  "pictures": [
+    {
+      "answer": "Kanelbulle (cinnamon bun)",
+      "file": "File:Kanelbulle.jpg",
+      "wiki": "sv:Kanelbulle"
+    },
+    {
+      "answer": "Semla",
+      "file": "File:Semla 2026 01.jpg",
+      "wiki": "sv:Semla"
+    },
+    {
+      "answer": "Prinsesstårta (princess cake)",
+      "file": "File:Prinsesstårta.JPG",
+      "wiki": "sv:Prinsesstårta"
+    },
+    {
+      "answer": "Kladdkaka (sticky chocolate cake)",
+      "file": "File:Kladdkaka-med-vispgradde.jpg",
+      "wiki": "sv:Kladdkaka"
+    },
+    {
+      "answer": "Dammsugare / punschrulle",
+      "file": "File:Dammsugare.JPG",
+      "wiki": "sv:Dammsugare (bakverk)"
+    },
+    {
+      "answer": "Lussekatt (saffron bun)",
+      "file": "File:Lussebullar.jpg",
+      "wiki": "sv:Lussekatt"
+    },
+    {
+      "answer": "Köttbullar (meatballs)",
+      "file": "File:Kottbullar.jpg",
+      "wiki": "sv:Köttbullar"
+    },
+    {
+      "answer": "Janssons frestelse",
+      "file": "File:Janssons frestelse.jpg",
+      "wiki": "sv:Janssons frestelse"
+    },
+    {
+      "answer": "Gravad lax (gravlax)",
+      "file": "File:Gravlax.jpg",
+      "wiki": "sv:Gravad lax"
+    },
+    {
+      "answer": "Smörgåstårta (sandwich cake)",
+      "file": "File:00 Smörgåstårta.jpg",
+      "wiki": "sv:Smörgåstårta"
+    },
+    {
+      "answer": "Knäckebröd (crispbread)",
+      "file": "File:Knaeckebroed.jpg",
+      "wiki": "sv:Knäckebröd"
+    },
+    {
+      "answer": "Surströmming (fermented herring)",
+      "file": "File:Surströmming.jpg",
+      "wiki": "sv:Surströmming"
+    },
+    {
+      "answer": "Inlagd sill (pickled herring)",
+      "file": "File:Sillar.jpg",
+      "wiki": "sv:Inlagd sill"
+    },
+    {
+      "answer": "Pyttipanna",
+      "file": "File:Pyttipannu.jpg",
+      "wiki": "sv:Pyttipanna"
+    },
+    {
+      "answer": "Falukorv",
+      "file": "File:Falukorv.jpg",
+      "wiki": "sv:Falukorv"
+    },
+    {
+      "answer": "Tunnbrödsrulle",
+      "file": "File:Tunnbrödsrulle.jpg",
+      "wiki": "sv:Tunnbrödsrulle"
+    },
+    {
+      "answer": "Ostkaka (Swedish cheesecake)",
+      "file": "File:Ostkaka.jpg",
+      "wiki": "sv:Ostkaka"
+    },
+    {
+      "answer": "Polkagris (candy cane)",
+      "file": "File:Flickr - cyclonebill - Polkagris.jpg",
+      "wiki": "sv:Polkagris"
+    },
+    {
+      "answer": "Ärtsoppa (pea soup)",
+      "file": "File:Ärtsoppa och pannkakor.jpg",
+      "wiki": "sv:Ärtsoppa"
+    },
+    {
+      "answer": "Raggmunk (potato pancake)",
+      "file": "File:Raggmunk med fläsk.jpg",
+      "wiki": "sv:Raggmunk"
+    },
+    {
+      "answer": "Kroppkakor",
+      "file": "File:Kroppkaka.jpg",
+      "wiki": "sv:Kroppkakor"
+    },
+    {
+      "answer": "Pepparkakor (gingerbread)",
+      "file": "File:Freshly baked gingerbread - Christmas 2004.jpg",
+      "wiki": "sv:Pepparkaka"
+    },
+    {
+      "answer": "Kräftor (crayfish)",
+      "file": "File:Astacus astacus male.jpg",
+      "wiki": "sv:Kräftor"
+    }
+  ]
+}

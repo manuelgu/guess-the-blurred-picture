@@ -1,0 +1,117 @@
+{
+  "id": "dogs",
+  "title": {
+    "en": "Dog breeds",
+    "de": "Hunderassen",
+    "sv": "Hundraser"
+  },
+  "emoji": "🐕",
+  "defaultMode": "tiles",
+  "pictures": [
+    {
+      "answer": "Golden Retriever",
+      "file": "File:Golden Retriever Dukedestiny01 drvd.jpg",
+      "wiki": "en:Golden Retriever"
+    },
+    {
+      "answer": "Dachshund",
+      "file": "File:닥스훈트(단모종) (Dachshund (Short)).jpg",
+      "wiki": "en:Dachshund"
+    },
+    {
+      "answer": "Pug",
+      "file": "File:Mops oct09 cropped2.jpg",
+      "wiki": "en:Pug"
+    },
+    {
+      "answer": "Siberian Husky",
+      "file": "File:Husky L.jpg",
+      "wiki": "en:Siberian Husky"
+    },
+    {
+      "answer": "Corgi",
+      "file": "File:Welsh Pembroke Corgi.jpg",
+      "wiki": "en:Pembroke Welsh Corgi"
+    },
+    {
+      "answer": "Dalmatian",
+      "file": "File:Sun Dog Dalmatian.jpg",
+      "wiki": "en:Dalmatian dog"
+    },
+    {
+      "answer": "Poodle",
+      "file": "File:Full attention (8067543690).jpg",
+      "wiki": "en:Poodle"
+    },
+    {
+      "answer": "Beagle",
+      "file": "File:Beagle 600.jpg",
+      "wiki": "en:Beagle"
+    },
+    {
+      "answer": "Border Collie",
+      "file": "File:Border Collie 600.jpg",
+      "wiki": "en:Border Collie"
+    },
+    {
+      "answer": "German Shepherd",
+      "file": "File:German Shepherd - DSC 0346 (10096362833).jpg",
+      "wiki": "en:German Shepherd"
+    },
+    {
+      "answer": "Labrador Retriever",
+      "file": "File:Labrador on Quantock (2175262184).jpg",
+      "wiki": "en:Labrador Retriever"
+    },
+    {
+      "answer": "Shiba Inu",
+      "file": "File:Taka Shiba.jpg",
+      "wiki": "en:Shiba Inu"
+    },
+    {
+      "answer": "Bulldog",
+      "file": "File:Whitebulldog.jpg",
+      "wiki": "en:Bulldog"
+    },
+    {
+      "answer": "Great Dane",
+      "file": "File:Dog niemiecki żółty LM980.jpg",
+      "wiki": "en:Great Dane"
+    },
+    {
+      "answer": "St. Bernard",
+      "file": "File:Hummel Vedor vd Robandahoeve.jpg",
+      "wiki": "en:St. Bernard (dog)"
+    },
+    {
+      "answer": "Bernese Mountain Dog",
+      "file": "File:3-BerneseMountainDogInGrass.jpg",
+      "wiki": "en:Bernese Mountain Dog"
+    },
+    {
+      "answer": "Pomeranian",
+      "file": "File:Pomeranian.JPG",
+      "wiki": "en:Pomeranian dog"
+    },
+    {
+      "answer": "Komondor",
+      "file": "File:Komondor delvin.jpg",
+      "wiki": "en:Komondor"
+    },
+    {
+      "answer": "Basset Hound",
+      "file": "File:BassetHound profil.jpg",
+      "wiki": "en:Basset Hound"
+    },
+    {
+      "answer": "Samoyed",
+      "file": "File:Samojed00.jpg",
+      "wiki": "en:Samoyed dog"
+    },
+    {
+      "answer": "Old English Sheepdog",
+      "file": "File:Old English Sheepdog (side).jpg",
+      "wiki": "en:Old English Sheepdog"
+    }
+  ]
+}

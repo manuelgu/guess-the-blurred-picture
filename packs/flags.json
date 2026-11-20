@@ -1,0 +1,142 @@
+{
+  "id": "flags",
+  "title": {
+    "en": "Flags of the world",
+    "de": "Flaggen der Welt",
+    "sv": "Världens flaggor"
+  },
+  "emoji": "🚩",
+  "defaultMode": "zoom",
+  "pictures": [
+    {
+      "answer": "Japan",
+      "file": "File:Flag of Japan.svg",
+      "wiki": "en:Flag of Japan"
+    },
+    {
+      "answer": "Brazil",
+      "file": "File:Flag of Brazil.svg",
+      "wiki": "en:Flag of Brazil"
+    },
+    {
+      "answer": "Canada",
+      "file": "File:Flag of Canada (Pantone).svg",
+      "wiki": "en:Flag of Canada"
+    },
+    {
+      "answer": "South Korea",
+      "file": "File:Flag of South Korea.svg",
+      "wiki": "en:Flag of South Korea"
+    },
+    {
+      "answer": "Switzerland",
+      "file": "File:Flag of Switzerland (Pantone).svg",
+      "wiki": "en:Flag of Switzerland"
+    },
+    {
+      "answer": "Sweden",
+      "file": "File:Flag of Sweden.svg",
+      "wiki": "en:Flag of Sweden"
+    },
+    {
+      "answer": "Germany",
+      "file": "File:Flag of Germany.svg",
+      "wiki": "en:Flag of Germany"
+    },
+    {
+      "answer": "United Kingdom",
+      "file": "File:Flag of the United Kingdom (1-2).svg",
+      "wiki": "en:Flag of the United Kingdom"
+    },
+    {
+      "answer": "United States",
+      "file": "File:Flag of the United States (DDD-F-416E specifications).svg",
+      "wiki": "en:Flag of the United States"
+    },
+    {
+      "answer": "India",
+      "file": "File:Flag of India.svg",
+      "wiki": "en:Flag of India"
+    },
+    {
+      "answer": "Mexico",
+      "file": "File:Flag of Mexico.svg",
+      "wiki": "en:Flag of Mexico"
+    },
+    {
+      "answer": "Argentina",
+      "file": "File:Flag of Argentina.svg",
+      "wiki": "en:Flag of Argentina"
+    },
+    {
+      "answer": "South Africa",
+      "file": "File:Flag of South Africa.svg",
+      "wiki": "en:Flag of South Africa"
+    },
+    {
+      "answer": "Nepal",
+      "file": "File:Flag of Nepal.svg",
+      "wiki": "en:Flag of Nepal"
+    },
+    {
+      "answer": "Turkey",
+      "file": "File:Flag of Turkey.svg",
+      "wiki": "en:Flag of Turkey"
+    },
+    {
+      "answer": "Greece",
+      "file": "File:Flag of Greece.svg",
+      "wiki": "en:Flag of Greece"
+    },
+    {
+      "answer": "Jamaica",
+      "file": "File:Flag of Jamaica.svg",
+      "wiki": "en:Flag of Jamaica"
+    },
+    {
+      "answer": "Australia",
+      "file": "File:Flag of Australia (converted).svg",
+      "wiki": "en:Flag of Australia"
+    },
+    {
+      "answer": "Kenya",
+      "file": "File:Flag of Kenya.svg",
+      "wiki": "en:Flag of Kenya"
+    },
+    {
+      "answer": "Bhutan",
+      "file": "File:Flag of Bhutan.svg",
+      "wiki": "en:Flag of Bhutan"
+    },
+    {
+      "answer": "Israel",
+      "file": "File:Flag of Israel.svg",
+      "wiki": "en:Flag of Israel"
+    },
+    {
+      "answer": "China",
+      "file": "File:Flag of the People's Republic of China.svg",
+      "wiki": "en:Flag of China"
+    },
+    {
+      "answer": "Ireland",
+      "file": "File:Flag of Ireland.svg",
+      "wiki": "en:Flag of Ireland"
+    },
+    {
+      "answer": "Italy",
+      "file": "File:Flag of Italy.svg",
+      "wiki": "en:Flag of Italy"
+    },
+    {
+      "answer": "Norway",
+      "file": "File:Flag of Norway.svg",
+      "wiki": "en:Flag of Norway"
+    },
+    {
+      "answer": "Finland",
+      "file": "File:Flag of Finland.svg",
+      "wiki": "en:Flag of Finland"
+    }
+  ]
+}

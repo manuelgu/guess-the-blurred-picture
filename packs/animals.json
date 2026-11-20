@@ -1,0 +1,127 @@
+{
+  "id": "animals",
+  "title": {
+    "en": "Weird & wonderful animals",
+    "de": "Verrückte Tiere",
+    "sv": "Märkliga djur"
+  },
+  "emoji": "🦦",
+  "defaultMode": "tiles",
+  "pictures": [
+    {
+      "answer": "Red panda",
+      "file": "File:Red Panda (24986761703).jpg",
+      "wiki": "en:Red panda"
+    },
+    {
+      "answer": "Axolotl",
+      "file": "File:Axolotl ganz.jpg",
+      "wiki": "en:Axolotl"
+    },
+    {
+      "answer": "Capybara",
+      "file": "File:Capybaracropped.jpg",
+      "wiki": "en:Capybara"
+    },
+    {
+      "answer": "Platypus",
+      "file": "File:Duck-billed platypus (Ornithorhynchus anatinus) Scottsdale.jpg",
+      "wiki": "en:Platypus"
+    },
+    {
+      "answer": "Okapi",
+      "file": "File:Saint-Aignan (Loir-et-Cher). Okapi.jpg",
+      "wiki": "en:Okapi"
+    },
+    {
+      "answer": "Narwhal",
+      "file": "File:Нарвал в российской Арктике.jpg",
+      "wiki": "en:Narwhal"
+    },
+    {
+      "answer": "Pangolin",
+      "file": "File:Eupholidota.jpg",
+      "wiki": "en:Pangolin"
+    },
+    {
+      "answer": "Quokka",
+      "file": "File:Setonix brachyurus on Rottnest Island 1.jpg",
+      "wiki": "en:Quokka"
+    },
+    {
+      "answer": "Snow leopard",
+      "file": "File:Irbis4.JPG",
+      "wiki": "en:Snow leopard"
+    },
+    {
+      "answer": "Flamingo",
+      "file": "File:American Flamingo JG.jpg",
+      "wiki": "en:American flamingo"
+    },
+    {
+      "answer": "Koala",
+      "file": "File:Koala climbing tree.jpg",
+      "wiki": "en:Koala"
+    },
+    {
+      "answer": "Chameleon",
+      "file": "File:Panther chameleon (Furcifer pardalis) male Nosy Be.jpg",
+      "wiki": "en:Panther chameleon"
+    },
+    {
+      "answer": "Tapir",
+      "file": "File:Schabrackentapir Tapirus indicus Tiergarten-Nuernberg-1.jpg",
+      "wiki": "en:Malayan tapir"
+    },
+    {
+      "answer": "Meerkat",
+      "file": "File:Meerkat (Suricata suricatta) Tswalu.jpg",
+      "wiki": "en:Meerkat"
+    },
+    {
+      "answer": "Puffin",
+      "file": "File:Puffin (Fratercula arctica).jpg",
+      "wiki": "en:Atlantic puffin"
+    },
+    {
+      "answer": "Sloth",
+      "file": "File:Bradypus.jpg",
+      "wiki": "en:Brown-throated sloth"
+    },
+    {
+      "answer": "Hedgehog",
+      "file": "File:Erinaceus europaeus LC0119.jpg",
+      "wiki": "en:European hedgehog"
+    },
+    {
+      "answer": "Toucan",
+      "file": "File:006 Toco toucan in Encontro das Águas State Park Photo by Giles Laurent (cropped).jpg",
+      "wiki": "en:Toco toucan"
+    },
+    {
+      "answer": "Octopus",
+      "file": "File:Octopus2.jpg",
+      "wiki": "en:Common octopus"
+    },
+    {
+      "answer": "Alpaca",
+      "file": "File:Alpaca in Higashiyama Zoo - 1.jpg",
+      "wiki": "en:Alpaca"
+    },
+    {
+      "answer": "Shoebill",
+      "file": "File:Balaeniceps rex -Ueno Zoo, Tokyo, Japan-8a.jpg",
+      "wiki": "en:Shoebill"
+    },
+    {
+      "answer": "Fennec fox",
+      "file": "File:Fennec Fox Vulpes zerda.jpg",
+      "wiki": "en:Fennec fox"
+    },
+    {
+      "answer": "Aye-aye",
+      "file": "File:Wild aye aye.jpg",
+      "wiki": "en:Aye-aye"
+    }
+  ]
+}

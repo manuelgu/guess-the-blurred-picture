@@ -31,6 +31,22 @@ npx wrangler r2 bucket create guess-the-blurred-picture-images
 npx wrangler d1 create guess-the-blurred-picture
 ```
 
+## Built-in packs
+
+Packs are data, not code: one file per pack in [`packs/`](packs), plus `packs/order.json` for the order on the home page (packs not listed there go last). The Worker reads them from R2 at runtime, so **adding or changing a pack needs no deploy** and never interrupts a running game.
+
+To add a pack, create `packs/<id>.json` (copy an existing one; `id` must match the file name), then:
+
+```sh
+npm run sync-packs -- --check --commons   # validate, and check every file exists on Commons
+```
+
+Push to `main` and the [Packs workflow](.github/workflows/packs.yml) validates and uploads them; the new pack shows up within about a minute. Pull requests that touch `packs/` are validated only. Cloudflare Workers Builds must exclude `packs/**` from its build watch paths, so pack commits don't redeploy the Worker.
+
+**First rollout** (moving packs out of the code), and whenever `PACK_BUNDLE_VERSION` in `shared/packs.ts` is bumped: run `npm run sync-packs -- --remote` *before* pushing, because the Worker deploy and the Packs workflow run side by side and the new Worker shows no packs until its bundle exists. Uploading early is harmless; the running Worker ignores bundles it doesn't read.
+
+The workflow needs two repository secrets: `CLOUDFLARE_ACCOUNT_ID`, and `CLOUDFLARE_API_TOKEN` with only the **Workers R2 Storage: Edit** permission (it can't deploy code). To upload by hand instead: `npm run sync-packs -- --remote`. `npm run dev` loads the packs into local R2 automatically.
+
 ## How a game runs
 
 1. Laptop: home page → pick a deck (or a built-in pack) → **Play** → **Create game**.
@@ -46,7 +62,10 @@ npx wrangler d1 create guess-the-blurred-picture
 | `worker/room.ts` | `Room` Durable Object — all game logic |
 | `worker/index.ts` | API routes (rooms, decks, images, Commons search, packs) |
 | `worker/commons.ts` | Wikimedia Commons search/import |
-| `worker/packs.ts` | Built-in packs (Wikipedia lead images on Commons) |
+| `packs/*.json` | Built-in packs (Wikipedia lead images on Commons), synced to R2 |
+| `shared/packs.ts` | Pack format and validation (used by the Worker and the sync script) |
+| `scripts/sync-packs.ts` | Validates `packs/` and uploads it to R2 as one bundle |
+| `worker/packs.ts` | Loads the pack bundle from R2 (cached for a minute) |
 | `src/pages/Display.tsx` | TV view |
 | `src/pages/Host.tsx` | Host phone |
 | `src/pages/Player.tsx` | Player buzzer |

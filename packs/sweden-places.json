@@ -1,0 +1,127 @@
+{
+  "id": "sweden-places",
+  "title": {
+    "en": "Places in Sweden",
+    "de": "Orte in Schweden",
+    "sv": "Sverige på kartan"
+  },
+  "emoji": "🗺️",
+  "defaultMode": "zoom",
+  "pictures": [
+    {
+      "answer": "Turning Torso (Malmö)",
+      "file": "File:Turning Torso 3.jpg",
+      "wiki": "sv:Turning Torso"
+    },
+    {
+      "answer": "Globen / Avicii Arena",
+      "file": "File:Globen från Hammarbybacken, 2016a.jpg",
+      "wiki": "sv:Avicii Arena"
+    },
+    {
+      "answer": "Stockholms stadshus (City Hall)",
+      "file": "File:Stockholms stadshus February 2026 02.jpg",
+      "wiki": "sv:Stockholms stadshus"
+    },
+    {
+      "answer": "Vasamuseet (Vasa Museum)",
+      "file": "File:Vasamuseet 2008.jpg",
+      "wiki": "sv:Vasamuseet"
+    },
+    {
+      "answer": "Icehotel (Jukkasjärvi)",
+      "file": "File:Main hall ICEHOTEL Sweden.jpg",
+      "wiki": "sv:Icehotel"
+    },
+    {
+      "answer": "Visby ringmur (Visby city wall)",
+      "file": "File:Visby ringmur June 2026.jpg",
+      "wiki": "sv:Visby ringmur"
+    },
+    {
+      "answer": "Öresundsbron (Øresund Bridge)",
+      "file": "File:Øresund Bridge from the air in September 2015.jpg",
+      "wiki": "sv:Öresundsbron"
+    },
+    {
+      "answer": "Ales stenar",
+      "file": "File:Ales stenar 2015-3.jpg",
+      "wiki": "sv:Ales stenar"
+    },
+    {
+      "answer": "Kebnekaise",
+      "file": "File:Kebnekaise viewed from Tarfala valley - narrower crop.jpg",
+      "wiki": "sv:Kebnekaise"
+    },
+    {
+      "answer": "Gamla stan (Stockholm)",
+      "file": "File:Gamla stan February 2013 01.jpg",
+      "wiki": "sv:Gamla stan"
+    },
+    {
+      "answer": "Karlatornet (Gothenburg)",
+      "file": "File:Karlatornet July 2025 02.jpg",
+      "wiki": "sv:Karlatornet"
+    },
+    {
+      "answer": "Liseberg (Gothenburg)",
+      "file": "File:Liseberg, 20221223.jpg",
+      "wiki": "sv:Liseberg"
+    },
+    {
+      "answer": "Högakustenbron (High Coast Bridge)",
+      "file": "File:Högakustenbron 12 juli 2024 Bild 6.jpg",
+      "wiki": "sv:Högakustenbron"
+    },
+    {
+      "answer": "Uppsala domkyrka (Uppsala Cathedral)",
+      "file": "File:Uppsala domkyrka, flygbild (cropped).jpg",
+      "wiki": "sv:Uppsala domkyrka"
+    },
+    {
+      "answer": "Gröna Lund",
+      "file": "File:Gröna Lund, 11 augusti 2024.jpg",
+      "wiki": "sv:Gröna Lund"
+    },
+    {
+      "answer": "Kiruna kyrka (Kiruna Church)",
+      "file": "File:Church of Kiruna 2011.jpg",
+      "wiki": "sv:Kiruna kyrka"
+    },
+    {
+      "answer": "Stockholms slott (Royal Palace)",
+      "file": "File:The Royal Palace (15891592359).jpg",
+      "wiki": "sv:Stockholms slott"
+    },
+    {
+      "answer": "Läckö slott",
+      "file": "File:Läckö slott juli 2004.jpg",
+      "wiki": "sv:Läckö slott"
+    },
+    {
+      "answer": "Kalmar slott",
+      "file": "File:Kalmar Slott Aug2011.jpg",
+      "wiki": "sv:Kalmar slott"
+    },
+    {
+      "answer": "Kaknästornet",
+      "file": "File:Kaknästornet 2008x.jpg",
+      "wiki": "sv:Kaknästornet"
+    },
+    {
+      "answer": "Lunds domkyrka (Lund Cathedral)",
+      "file": "File:Lund domkyrkan2007.jpg",
+      "wiki": "sv:Lunds domkyrka"
+    },
+    {
+      "answer": "Ölandsbron (Öland Bridge)",
+      "file": "File:Ölandsbron augusti 2018.jpg",
+      "wiki": "sv:Ölandsbron"
+    },
+    {
+      "answer": "Smögen",
+      "file": "File:Smögenbryggan 2009b.jpg",
+      "wiki": "sv:Smögenbryggan"
+    }
+  ]
+}

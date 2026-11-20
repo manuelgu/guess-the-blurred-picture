@@ -1,0 +1,82 @@
+{
+  "id": "sweden-traditions",
+  "title": {
+    "en": "Swedish traditions",
+    "de": "Schwedische Traditionen",
+    "sv": "Svenska traditioner"
+  },
+  "emoji": "🌼",
+  "defaultMode": "spotlight",
+  "pictures": [
+    {
+      "answer": "Midsommarstång (maypole)",
+      "file": "File:Mittsommer-skansen.jpg",
+      "wiki": "sv:Midsommarstång"
+    },
+    {
+      "answer": "Kräftskiva (crayfish party)",
+      "file": "File:Kräftskiva, Häringe slott, 1991.jpg",
+      "wiki": "sv:Kräftskiva"
+    },
+    {
+      "answer": "Luciatåg (Lucia procession)",
+      "file": "File:SanktaLuciaProcession.jpg",
+      "wiki": "sv:Luciatåg"
+    },
+    {
+      "answer": "Påskris (Easter twigs)",
+      "file": "File:Påsk 2019.jpg",
+      "wiki": "sv:Påskris"
+    },
+    {
+      "answer": "Valborg (bonfire night)",
+      "file": "File:Valborg 2182 (6989903410).jpg",
+      "wiki": "sv:Valborgsmässoafton"
+    },
+    {
+      "answer": "Dalahäst (Dala horse)",
+      "file": "File:Dalecarlian horse.jpg",
+      "wiki": "sv:Dalahäst"
+    },
+    {
+      "answer": "Nationaldagen (6 June)",
+      "file": "File:National Day of Sweden 2016 12.jpg",
+      "wiki": "sv:Sveriges nationaldag"
+    },
+    {
+      "answer": "Julbord (Christmas buffet)",
+      "file": "File:Carl Larsson julbord 1904.jpg",
+      "wiki": "sv:Julbord"
+    },
+    {
+      "answer": "Gävlebocken (Gävle goat)",
+      "file": "File:Gavle goat 2019.jpg",
+      "wiki": "sv:Gävlebocken"
+    },
+    {
+      "answer": "Fika",
+      "file": "File:Fika latte.jpg",
+      "wiki": "sv:Fika"
+    },
+    {
+      "answer": "Adventsljusstake (advent candles)",
+      "file": "File:Adventsljusstake med tre brinnande ljus.JPG",
+      "wiki": "sv:Adventsljusstake"
+    },
+    {
+      "answer": "Snaps / nubbe",
+      "file": "File:Snaps at a sittning (brightened).jpg",
+      "wiki": "sv:Snaps"
+    },
+    {
+      "answer": "Vasaloppet",
+      "file": "File:Jørgen Aukland Vasaloppet 2013 001.jpg",
+      "wiki": "sv:Vasaloppet"
+    },
+    {
+      "answer": "Studenten (graduation)",
+      "file": "File:Studentmössa och studentdocka.jpg",
+      "wiki": "sv:Studenten"
+    }
+  ]
+}

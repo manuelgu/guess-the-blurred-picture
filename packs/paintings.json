@@ -1,0 +1,137 @@
+{
+  "id": "paintings",
+  "title": {
+    "en": "Famous paintings",
+    "de": "Berühmte Gemälde",
+    "sv": "Kända målningar"
+  },
+  "emoji": "🖼️",
+  "defaultMode": "spotlight",
+  "pictures": [
+    {
+      "answer": "Mona Lisa",
+      "file": "File:Mona Lisa, by Leonardo da Vinci, from C2RMF retouched.jpg",
+      "wiki": "en:Mona Lisa"
+    },
+    {
+      "answer": "The Starry Night",
+      "file": "File:Van Gogh - Starry Night - Google Art Project.jpg",
+      "wiki": "en:The Starry Night"
+    },
+    {
+      "answer": "The Scream",
+      "file": "File:Edvard Munch, 1893, The Scream, oil, tempera and pastel on cardboard, 91 x 73 cm, National Gallery of Norway.jpg",
+      "wiki": "en:The Scream"
+    },
+    {
+      "answer": "Girl with a Pearl Earring",
+      "file": "File:1665 Girl with a Pearl Earring.jpg",
+      "wiki": "en:Girl with a Pearl Earring"
+    },
+    {
+      "answer": "The Birth of Venus",
+      "file": "File:Sandro Botticelli - La nascita di Venere - Google Art Project - edited.jpg",
+      "wiki": "en:The Birth of Venus"
+    },
+    {
+      "answer": "The Last Supper",
+      "file": "File:The Last Supper - Leonardo Da Vinci - High Resolution 32x16.jpg",
+      "wiki": "en:The Last Supper (Leonardo)"
+    },
+    {
+      "answer": "The Great Wave off Kanagawa",
+      "file": "File:Tsunami by hokusai 19th century.jpg",
+      "wiki": "en:The Great Wave off Kanagawa"
+    },
+    {
+      "answer": "Water Lilies (Monet)",
+      "file": "File:Reflections of Clouds on the Water-Lily Pond.jpg",
+      "wiki": "en:Water Lilies (Monet series)"
+    },
+    {
+      "answer": "The Kiss (Klimt)",
+      "file": "File:The Kiss - Gustav Klimt - Google Cultural Institute.jpg",
+      "wiki": "en:The Kiss (Klimt)"
+    },
+    {
+      "answer": "Sunflowers (Van Gogh)",
+      "file": "File:Vincent Willem van Gogh 127.jpg",
+      "wiki": "en:Sunflowers (Van Gogh series)"
+    },
+    {
+      "answer": "The Creation of Adam",
+      "file": "File:Michelangelo - Creation of Adam (cropped).jpg",
+      "wiki": "en:The Creation of Adam"
+    },
+    {
+      "answer": "The Night Watch",
+      "file": "File:La ronda de noche, por Rembrandt van Rijn.jpg",
+      "wiki": "en:The Night Watch"
+    },
+    {
+      "answer": "Las Meninas",
+      "file": "File:Las Meninas, by Diego Velázquez, from Prado in Google Earth.jpg",
+      "wiki": "en:Las Meninas"
+    },
+    {
+      "answer": "Liberty Leading the People",
+      "file": "File:La Liberté guidant le peuple - Eugène Delacroix - Musée du Louvre Peintures RF 129 - après restauration 2024.jpg",
+      "wiki": "en:Liberty Leading the People"
+    },
+    {
+      "answer": "Wanderer above the Sea of Fog",
+      "file": "File:Caspar David Friedrich - Wanderer above the Sea of Fog.jpeg",
+      "wiki": "en:Wanderer above the Sea of Fog"
+    },
+    {
+      "answer": "A Sunday Afternoon on the Island of La Grande Jatte",
+      "file": "File:A Sunday on La Grande Jatte, Georges Seurat, 1884.jpg",
+      "wiki": "en:A Sunday Afternoon on the Island of La Grande Jatte"
+    },
+    {
+      "answer": "Whistler's Mother",
+      "file": "File:Whistlers Mother high res.jpg",
+      "wiki": "en:Whistler's Mother"
+    },
+    {
+      "answer": "The Garden of Earthly Delights",
+      "file": "File:The Garden of earthly delights.jpg",
+      "wiki": "en:The Garden of Earthly Delights"
+    },
+    {
+      "answer": "Impression, Sunrise",
+      "file": "File:Monet - Impression, Sunrise.jpg",
+      "wiki": "en:Impression, Sunrise"
+    },
+    {
+      "answer": "American Gothic",
+      "file": "File:Grant Wood - American Gothic (1930).jpg",
+      "wiki": "en:American Gothic"
+    },
+    {
+      "answer": "The School of Athens",
+      "file": "File:\"The School of Athens\" by Raffaello Sanzio da Urbino.jpg",
+      "wiki": "en:The School of Athens"
+    },
+    {
+      "answer": "The Hay Wain",
+      "file": "File:John Constable - The Hay Wain (1821).jpg",
+      "wiki": "en:The Hay Wain"
+    },
+    {
+      "answer": "The Arnolfini Portrait",
+      "file": "File:The Arnolfini portrait (1434).jpg",
+      "wiki": "en:The Arnolfini Portrait"
+    },
+    {
+      "answer": "The Tower of Babel",
+      "file": "File:Pieter Bruegel the Elder - The Tower of Babel (Vienna) - Google Art Project - edited.jpg",
+      "wiki": "en:The Tower of Babel (Bruegel)"
+    },
+    {
+      "answer": "Nighthawks",
+      "file": "File:Nighthawks by Edward Hopper 1942.jpg",
+      "wiki": "en:Nighthawks (painting)"
+    }
+  ]
+}

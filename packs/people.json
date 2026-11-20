@@ -1,0 +1,127 @@
+{
+  "id": "people",
+  "title": {
+    "en": "Famous faces",
+    "de": "Berühmte Gesichter",
+    "sv": "Kända ansikten"
+  },
+  "emoji": "🧑‍🎤",
+  "defaultMode": "pixelate",
+  "pictures": [
+    {
+      "answer": "Albert Einstein",
+      "file": "File:Albert Einstein Head cleaned.jpg",
+      "wiki": "en:Albert Einstein"
+    },
+    {
+      "answer": "Marie Curie",
+      "file": "File:Marie Curie c. 1920s.jpg",
+      "wiki": "en:Marie Curie"
+    },
+    {
+      "answer": "Abraham Lincoln",
+      "file": "File:Abraham Lincoln O-77 matte collodion print.jpg",
+      "wiki": "en:Abraham Lincoln"
+    },
+    {
+      "answer": "Frida Kahlo",
+      "file": "File:Frida Kahlo, by Guillermo Kahlo.jpg",
+      "wiki": "en:Frida Kahlo"
+    },
+    {
+      "answer": "Mahatma Gandhi",
+      "file": "File:Mahatma-Gandhi, studio, 1931.jpg",
+      "wiki": "en:Mahatma Gandhi"
+    },
+    {
+      "answer": "Nelson Mandela",
+      "file": "File:Nelson Mandela 1994.jpg",
+      "wiki": "en:Nelson Mandela"
+    },
+    {
+      "answer": "Winston Churchill",
+      "file": "File:Sir Winston Churchill - 19086236948 (restored).jpg",
+      "wiki": "en:Winston Churchill"
+    },
+    {
+      "answer": "Queen Elizabeth II",
+      "file": "File:Queen Elizabeth II official portrait for 1959 tour (retouched) (cropped) (3-to-4 aspect ratio).jpg",
+      "wiki": "en:Elizabeth II"
+    },
+    {
+      "answer": "Barack Obama",
+      "file": "File:President Barack Obama.jpg",
+      "wiki": "en:Barack Obama"
+    },
+    {
+      "answer": "Angela Merkel",
+      "file": "File:Angela Merkel 2019 cropped.jpg",
+      "wiki": "en:Angela Merkel"
+    },
+    {
+      "answer": "Charlie Chaplin",
+      "file": "File:Charlie Chaplin portrait Getty 1739411952.jpg",
+      "wiki": "en:Charlie Chaplin"
+    },
+    {
+      "answer": "Marilyn Monroe",
+      "file": "File:Monroecirca1953.jpg",
+      "wiki": "en:Marilyn Monroe"
+    },
+    {
+      "answer": "Elvis Presley",
+      "file": "File:Elvis Presley promoting Jailhouse Rock.jpg",
+      "wiki": "en:Elvis Presley"
+    },
+    {
+      "answer": "Freddie Mercury",
+      "file": "File:Freddie Mercury performing in New Haven, CT, November 1977.jpg",
+      "wiki": "en:Freddie Mercury"
+    },
+    {
+      "answer": "Mona Lisa",
+      "file": "File:Mona Lisa, by Leonardo da Vinci, from C2RMF retouched.jpg",
+      "wiki": "en:Mona Lisa"
+    },
+    {
+      "answer": "Ludwig van Beethoven",
+      "file": "File:Joseph Karl Stieler's Beethoven mit dem Manuskript der Missa solemnis.jpg",
+      "wiki": "en:Ludwig van Beethoven"
+    },
+    {
+      "answer": "Wolfgang Amadeus Mozart",
+      "file": "File:The Mozart Family - Wolfgang Amadeus Mozart headshot.jpg",
+      "wiki": "en:Wolfgang Amadeus Mozart"
+    },
+    {
+      "answer": "Napoleon",
+      "file": "File:Jacques-Louis David - The Emperor Napoleon in His Study at the Tuileries - Google Art Project.jpg",
+      "wiki": "en:Napoleon"
+    },
+    {
+      "answer": "Cleopatra",
+      "file": "File:Kleopatra-VII.-Altes-Museum-Berlin1.jpg",
+      "wiki": "en:Cleopatra"
+    },
+    {
+      "answer": "Audrey Hepburn",
+      "file": "File:AudreyKHepburn.jpg",
+      "wiki": "en:Audrey Hepburn"
+    },
+    {
+      "answer": "Muhammad Ali",
+      "file": "File:Muhammad Ali NYWTS.jpg",
+      "wiki": "en:Muhammad Ali"
+    },
+    {
+      "answer": "Greta Thunberg",
+      "file": "File:Greta Thunberg in May 2026 (cropped 3x4).jpg",
+      "wiki": "en:Greta Thunberg"
+    },
+    {
+      "answer": "Taylor Swift",
+      "file": "File:Taylor Swift at the 2023 MTV Video Music Awards (3).png",
+      "wiki": "en:Taylor Swift"
+    }
+  ]
+}

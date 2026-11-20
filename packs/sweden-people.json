@@ -1,0 +1,127 @@
+{
+  "id": "sweden-people",
+  "title": {
+    "en": "Famous Swedes",
+    "de": "Berühmte Schweden",
+    "sv": "Kända svenskar"
+  },
+  "emoji": "👑",
+  "defaultMode": "pixelate",
+  "pictures": [
+    {
+      "answer": "Zlatan Ibrahimović",
+      "file": "File:Zlatan Ibrahimović nyc.jpg",
+      "wiki": "en:Zlatan Ibrahimović"
+    },
+    {
+      "answer": "Ingmar Bergman",
+      "file": "File:Ingmar Bergman (1966).jpg",
+      "wiki": "en:Ingmar Bergman"
+    },
+    {
+      "answer": "Alfred Nobel",
+      "file": "File:Alfred Nobel3.jpg",
+      "wiki": "en:Alfred Nobel"
+    },
+    {
+      "answer": "Björn Borg",
+      "file": "File:Bjorn Borg en 2014.jpg",
+      "wiki": "en:Björn Borg"
+    },
+    {
+      "answer": "Annika Sörenstam",
+      "file": "File:2008 LPGA Championship - Annika Sorenstam tee shot.jpg",
+      "wiki": "en:Annika Sörenstam"
+    },
+    {
+      "answer": "Alicia Vikander",
+      "file": "File:Alicia Vikander at the 83rd Venice International Film Festival “The Echo Chamber” premiere.jpg",
+      "wiki": "en:Alicia Vikander"
+    },
+    {
+      "answer": "Ingvar Kamprad",
+      "file": "File:Ingvar Kamprad Haparanda June 2010.jpg",
+      "wiki": "en:Ingvar Kamprad"
+    },
+    {
+      "answer": "Daniel Ek",
+      "file": "File:Daniel Ek EC 2025 (cropped).jpg",
+      "wiki": "en:Daniel Ek"
+    },
+    {
+      "answer": "Carl XVI Gustaf",
+      "file": "File:06.11.2025 – Recepção Oficial dos Chefes de Delegação da Cúpula do Clima (54906269035) (Carlos XVI Gustavo).jpg",
+      "wiki": "en:Carl XVI Gustaf"
+    },
+    {
+      "answer": "Kronprinsessan Victoria",
+      "file": "File:2025-11-18 Event, Besuch der Kronprinzessin Victoria von Schweden beim deutschen Bundespräsidenten Frank-Walter Steinmeier im November 2025 STP 9817-2.jpg",
+      "wiki": "en:Victoria, Crown Princess of Sweden"
+    },
+    {
+      "answer": "Greta Garbo",
+      "file": "File:Garbo in Inspiration.jpg",
+      "wiki": "en:Greta Garbo"
+    },
+    {
+      "answer": "Ingrid Bergman",
+      "file": "File:Ingrid Bergman by Whitey Schafer 1940.jpg",
+      "wiki": "en:Ingrid Bergman"
+    },
+    {
+      "answer": "Dag Hammarskjöld",
+      "file": "File:Dag Hammarskjöld.jpg",
+      "wiki": "en:Dag Hammarskjöld"
+    },
+    {
+      "answer": "Stellan Skarsgård",
+      "file": "File:Stellan Skarsgård-9707 (cropped).jpg",
+      "wiki": "en:Stellan Skarsgård"
+    },
+    {
+      "answer": "Sarah Sjöström",
+      "file": "File:Sarah Sjöström 2013 (cropped).jpg",
+      "wiki": "en:Sarah Sjöström"
+    },
+    {
+      "answer": "Armand \"Mondo\" Duplantis",
+      "file": "File:Armand Duplantis wins the Pole Vault at the 2026 Wanda Diamond League’s Weltklasse Zürich athletics competition.jpg",
+      "wiki": "en:Armand Duplantis"
+    },
+    {
+      "answer": "Henrik Lundqvist",
+      "file": "File:Henrik Lundqvist by Gage Skidmore.jpg",
+      "wiki": "en:Henrik Lundqvist"
+    },
+    {
+      "answer": "PewDiePie (Felix Kjellberg)",
+      "file": "File:Pewdiepie head shot.jpg",
+      "wiki": "en:PewDiePie"
+    },
+    {
+      "answer": "Greta Thunberg",
+      "file": "File:Greta Thunberg in May 2026 (cropped 3x4).jpg",
+      "wiki": "en:Greta Thunberg"
+    },
+    {
+      "answer": "Astrid Lindgren",
+      "file": "File:Lindgren 1960.jpg",
+      "wiki": "sv:Astrid Lindgren"
+    },
+    {
+      "answer": "Carl von Linné",
+      "file": "File:Carl von Linné.jpg",
+      "wiki": "sv:Carl von Linné"
+    },
+    {
+      "answer": "Olof Palme",
+      "file": "File:Olof Palme - Alvin (239694).jpg",
+      "wiki": "sv:Olof Palme"
+    },
+    {
+      "answer": "Selma Lagerlöf",
+      "file": "File:Atelje Jaeger - Selma Lagerlöf 1928.jpeg",
+      "wiki": "sv:Selma Lagerlöf"
+    }
+  ]
+}

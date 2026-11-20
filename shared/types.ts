@@ -8,6 +8,12 @@ export const ANSWER_SECONDS = 5;
 export const COUNTDOWN_MS = 3000;
 /** The server keeps at most this many pictures per deck; the editor must not let users add more. */
 export const MAX_DECK_PICTURES = 200;
+/** Every value a deck/pack/picture mode may take. */
+export const REVEAL_MODE_SETTINGS: readonly RevealModeSetting[] = [...REVEAL_MODES, "random"];
+export const isRevealModeSetting = (v: unknown): v is RevealModeSetting =>
+  typeof v === "string" && (REVEAL_MODE_SETTINGS as readonly string[]).includes(v);
+/** Longest answer a picture may have (decks and packs). */
+export const MAX_ANSWER_LENGTH = 120;
 
 // ---------- Decks ----------
 
@@ -169,4 +175,19 @@ export interface CommonsResult {
 export interface CreateRoomResponse {
   code: string;
   displayToken: string;
+}
+
+/**
+ * Canonical form of a Commons file title, as MediaWiki normalises it: underscores are spaces,
+ * "Image:" is an alias of "File:", and both the namespace and the name start upper-case.
+ * ("file:puffin.jpg" → "File:Puffin.jpg"). Redirects are resolved separately via the API.
+ */
+export function commonsKey(title: string): string {
+  const t = title.replace(/_/g, " ").replace(/\s+/g, " ").trim();
+  const m = /^(file|image)\s*:\s*(.*)$/i.exec(t);
+  const name = m ? m[2] : t;
+  // Upper-case the first letter, but only 1:1 mappings ("ß" → "SS" is not how MediaWiki does it).
+  const first = name.charAt(0);
+  const upper = first.toUpperCase();
+  return `File:${upper.length === 1 ? upper : first}${name.slice(1)}`;
 }

@@ -1,0 +1,112 @@
+{
+  "id": "food",
+  "title": {
+    "en": "Food from around the world",
+    "de": "Essen aus aller Welt",
+    "sv": "Mat från hela världen"
+  },
+  "emoji": "🍜",
+  "defaultMode": "blur",
+  "pictures": [
+    {
+      "answer": "Sushi",
+      "file": "File:Sushi platter.jpg",
+      "wiki": "en:Sushi"
+    },
+    {
+      "answer": "Pizza",
+      "file": "File:Pizza-3007395.jpg",
+      "wiki": "en:Pizza"
+    },
+    {
+      "answer": "Croissant",
+      "file": "File:Croissant-Petr Kratochvil.jpg",
+      "wiki": "en:Croissant"
+    },
+    {
+      "answer": "Pretzel",
+      "file": "File:BrezelnSalz02 (cropped).JPG",
+      "wiki": "en:Pretzel"
+    },
+    {
+      "answer": "Paella",
+      "file": "File:01 Paella Valenciana original.jpg",
+      "wiki": "en:Paella"
+    },
+    {
+      "answer": "Taco",
+      "file": "File:001 Tacos de carnitas, carne asada y al pastor.jpg",
+      "wiki": "en:Taco"
+    },
+    {
+      "answer": "Ramen",
+      "file": "File:Shoyu Ramen（Tokyo Ramen） - 01.jpg",
+      "wiki": "en:Ramen"
+    },
+    {
+      "answer": "Baklava",
+      "file": "File:Baklava(1).png",
+      "wiki": "en:Baklava"
+    },
+    {
+      "answer": "Kimchi",
+      "file": "File:Various kimchi.jpg",
+      "wiki": "en:Kimchi"
+    },
+    {
+      "answer": "Falafel",
+      "file": "File:Falafels 2.jpg",
+      "wiki": "en:Falafel"
+    },
+    {
+      "answer": "Spaghetti",
+      "file": "File:Spaghettoni.jpg",
+      "wiki": "en:Spaghetti"
+    },
+    {
+      "answer": "Hamburger",
+      "file": "File:RedDot Burger.jpg",
+      "wiki": "en:Hamburger"
+    },
+    {
+      "answer": "Dim sum",
+      "file": "File:Chinese DimSum (9023590541).jpg",
+      "wiki": "en:Dim sum"
+    },
+    {
+      "answer": "Churro",
+      "file": "File:Chocolate con churros (27343655726).jpg",
+      "wiki": "en:Churro"
+    },
+    {
+      "answer": "Pierogi",
+      "file": "File:Pierogi z masłem - 2023.03.31.jpg",
+      "wiki": "en:Pierogi"
+    },
+    {
+      "answer": "Kanelbulle (cinnamon bun)",
+      "file": "File:Cinnamon roll in Stockholm.jpg",
+      "wiki": "sv:Kanelbulle"
+    },
+    {
+      "answer": "Schnitzel",
+      "file": "File:Breitenlesau Krug Bräu Schnitzel.JPG",
+      "wiki": "en:Schnitzel"
+    },
+    {
+      "answer": "Macaron",
+      "file": "File:VanillaMacaron.jpg",
+      "wiki": "en:Macaron"
+    },
+    {
+      "answer": "Pho",
+      "file": "File:Bowl of Meatball pho.jpg",
+      "wiki": "en:Pho"
+    },
+    {
+      "answer": "Guacamole",
+      "file": "File:Guacamole IMGP1271.jpg",
+      "wiki": "en:Guacamole"
+    }
+  ]
+}

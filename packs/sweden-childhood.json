@@ -1,0 +1,72 @@
+{
+  "id": "sweden-childhood",
+  "title": {
+    "en": "Swedish childhood",
+    "de": "Schwedische Kindheit",
+    "sv": "Barndom"
+  },
+  "emoji": "🧸",
+  "defaultMode": "zoom",
+  "pictures": [
+    {
+      "answer": "Pippi Långstrump",
+      "file": "File:Pippi Longstocking.jpg",
+      "wiki": "sv:Pippi Långstrump"
+    },
+    {
+      "answer": "Emil i Lönneberga",
+      "file": "File:Emil and pig, Astrid Lindgrens Värld 2014.jpg",
+      "wiki": "sv:Emil i Lönneberga"
+    },
+    {
+      "answer": "Bamse",
+      "file": "File:Bamse.jpg",
+      "wiki": "sv:Bamse"
+    },
+    {
+      "answer": "Pettson och Findus",
+      "file": "File:Pettson och Findus.JPG",
+      "wiki": "sv:Pettson och Findus"
+    },
+    {
+      "answer": "Bolibompa",
+      "file": "File:Bolibompadraken.jpeg",
+      "wiki": "sv:Bolibompa"
+    },
+    {
+      "answer": "Ronja Rövardotter",
+      "file": "File:Ronja och Mattis, Astrid Lindgrens Värld 2014.jpg",
+      "wiki": "sv:Ronja Rövardotter"
+    },
+    {
+      "answer": "Bröderna Lejonhjärta",
+      "file": "File:Astrid Lindgrens Värld - Bröderna Lejonhjärta.jpg",
+      "wiki": "sv:Bröderna Lejonhjärta"
+    },
+    {
+      "answer": "Nils Holgersson",
+      "file": "File:Nils Holgersson band 1-Illustration 1.jpg",
+      "wiki": "sv:Nils Holgerssons underbara resa genom Sverige"
+    },
+    {
+      "answer": "Mamma Mu",
+      "file": "File:Mamma-mu-och-krakan.jpg",
+      "wiki": "sv:Mamma Mu"
+    },
+    {
+      "answer": "Astrid Lindgrens värld",
+      "file": "File:Astrid Lindgrens Värld - Entré.jpg",
+      "wiki": "sv:Astrid Lindgrens värld"
+    },
+    {
+      "answer": "Junibacken",
+      "file": "File:Junibacken 2007.jpg",
+      "wiki": "sv:Junibacken"
+    },
+    {
+      "answer": "Villa Villekulla",
+      "file": "File:Villa villekulla.jpg",
+      "wiki": "sv:Villa Villekulla"
+    }
+  ]
+}

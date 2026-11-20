@@ -1,5 +1,5 @@
 // Wikimedia Commons image search + import.
-import type { CommonsResult } from "../shared/types";
+import { commonsKey, type CommonsResult } from "../shared/types";
 import type { Env } from "./env";
 import { HttpError, IMAGE_TYPE, imageExt, randomId, sha256 } from "./http";
 import { WikimediaBusy, WikimediaUnavailable, wikimediaFetch } from "./wikimedia";
@@ -142,21 +142,6 @@ export async function importFromCommons(env: Env, title: string): Promise<{ imag
   const imageKey = `img/${randomId(16)}.${imageExt(type)}`;
   await env.IMAGES.put(imageKey, body, { httpMetadata: { contentType: type } });
   return { imageKey, credit: creditFor(info) };
-}
-
-/**
- * Canonical form of a Commons file title, as MediaWiki normalises it: underscores are spaces,
- * "Image:" is an alias of "File:", and both the namespace and the name start upper-case.
- * ("file:puffin.jpg" → "File:Puffin.jpg"). Redirects are resolved separately via the API.
- */
-export function commonsKey(title: string): string {
-  const t = title.replace(/_/g, " ").replace(/\s+/g, " ").trim();
-  const m = /^(file|image)\s*:\s*(.*)$/i.exec(t);
-  const name = m ? m[2] : t;
-  // Upper-case the first letter, but only 1:1 mappings ("ß" → "SS" is not how MediaWiki does it).
-  const first = name.charAt(0);
-  const upper = first.toUpperCase();
-  return `File:${upper.length === 1 ? upper : first}${name.slice(1)}`;
 }
 
 export interface BatchResult {

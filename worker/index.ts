@@ -1,9 +1,9 @@
-import { emptyDeck, REVEAL_MODES, type CreateRoomResponse, type Deck, type RevealModeSetting } from "../shared/types";
-import { commonsKey, importCommonsBatch, importFromCommons, searchCommons } from "./commons";
+import { commonsKey, emptyDeck, isRevealModeSetting, type CreateRoomResponse, type Deck } from "../shared/types";
+import { importCommonsBatch, importFromCommons, searchCommons } from "./commons";
 import { createDeck, deleteDeck, loadDeck, sanitizeDeck, saveDeck } from "./decks";
 import type { Env } from "./env";
 import { HttpError, IMAGE_TYPE, imageExt, json, randomId } from "./http";
-import { PACKS, type Pack } from "./packs";
+import { findPack, loadPacks, type Pack } from "./packs";
 
 export { Room } from "./room";
 
@@ -44,8 +44,8 @@ async function handleApi(req: Request, env: Env, url: URL): Promise<Response> {
     const limit = Number.isInteger(count) && count > 0 ? count : ordered.length;
     let roomDeck: Deck = { ...deck, pictures: ordered.slice(0, limit) };
     // Optional reveal-mode override for this game only: applies to every picture, including per-picture modes.
-    if (typeof body.mode === "string" && (body.mode === "random" || (REVEAL_MODES as readonly string[]).includes(body.mode))) {
-      const mode = body.mode as RevealModeSetting;
+    if (isRevealModeSetting(body.mode)) {
+      const mode = body.mode;
       roomDeck = { ...roomDeck, defaultMode: mode, pictures: roomDeck.pictures.map(({ mode: _m, ...p }) => p) };
     }
     for (let attempt = 0; attempt < 12; attempt++) {
@@ -129,11 +129,11 @@ async function handleApi(req: Request, env: Env, url: URL): Promise<Response> {
   // --- Built-in packs ---
   if (a === "packs" && !b && method === "GET") {
     return json(
-      PACKS.map((p) => ({ id: p.id, title: p.title, emoji: p.emoji, count: p.pictures.length })),
+      (await loadPacks(env)).map((p) => ({ id: p.id, title: p.title, emoji: p.emoji, count: p.pictures.length })),
     );
   }
   if (a === "packs" && b && c === "use" && method === "POST") {
-    const pack = PACKS.find((p) => p.id === b);
+    const pack = await findPack(env, b);
     if (!pack) throw new HttpError(404, "Pack not found");
     const { lang, allowPartial } = (await req.json().catch(() => ({}))) as { lang?: unknown; allowPartial?: unknown };
     // "Use what arrived" builds the deck from stored pictures only, without contacting Wikimedia

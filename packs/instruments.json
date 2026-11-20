@@ -1,0 +1,97 @@
+{
+  "id": "instruments",
+  "title": {
+    "en": "Musical instruments",
+    "de": "Musikinstrumente",
+    "sv": "Musikinstrument"
+  },
+  "emoji": "🎻",
+  "defaultMode": "pixelate",
+  "pictures": [
+    {
+      "answer": "Violin",
+      "file": "File:Violin VL100.png",
+      "wiki": "en:Violin"
+    },
+    {
+      "answer": "Piano",
+      "file": "File:Steinway Vienna 002.JPG",
+      "wiki": "en:Piano"
+    },
+    {
+      "answer": "Saxophone",
+      "file": "File:Eight saxophone sizes smaller.png",
+      "wiki": "en:Saxophone"
+    },
+    {
+      "answer": "Harp",
+      "file": "File:Harp.png",
+      "wiki": "en:Harp"
+    },
+    {
+      "answer": "Accordion",
+      "file": "File:A converter free-bass piano-accordion and a Russian bayan.jpg",
+      "wiki": "en:Accordion"
+    },
+    {
+      "answer": "Didgeridoo",
+      "file": "File:Australiandidgeridoos.jpg",
+      "wiki": "en:Didgeridoo"
+    },
+    {
+      "answer": "Trumpet",
+      "file": "File:Yamaha Trumpet YTR-8335LA crop.jpg",
+      "wiki": "en:Trumpet"
+    },
+    {
+      "answer": "Cello",
+      "file": "File:Cello front side.png",
+      "wiki": "en:Cello"
+    },
+    {
+      "answer": "Sitar",
+      "file": "File:Sitar, late 19th Century.jpg",
+      "wiki": "en:Sitar"
+    },
+    {
+      "answer": "Theremin",
+      "file": "File:Etherwave Theremin Kit.jpg",
+      "wiki": "en:Theremin"
+    },
+    {
+      "answer": "Harmonica",
+      "file": "File:16-hole chrom 10-hole diatonic.jpg",
+      "wiki": "en:Harmonica"
+    },
+    {
+      "answer": "Flute",
+      "file": "File:Shinobue and other flutes-3.jpg",
+      "wiki": "en:Flute"
+    },
+    {
+      "answer": "Clarinet",
+      "file": "File:Leitner+Kraus 410 320.png",
+      "wiki": "en:Clarinet"
+    },
+    {
+      "answer": "Bassoon",
+      "file": "File:FoxBassoon.png",
+      "wiki": "en:Bassoon"
+    },
+    {
+      "answer": "Steelpan",
+      "file": "File:Steelpan Instruments at Trinidad and Tobago Carnival.jpg",
+      "wiki": "en:Steelpan"
+    },
+    {
+      "answer": "Nyckelharpa",
+      "file": "File:Nyckelharpa 0930 (cropped).jpg",
+      "wiki": "en:Nyckelharpa"
+    },
+    {
+      "answer": "Triangle",
+      "file": "File:Triangle 001.jpg",
+      "wiki": "en:Triangle (musical instrument)"
+    }
+  ]
+}

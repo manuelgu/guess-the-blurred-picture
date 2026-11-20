@@ -1,0 +1,127 @@
+{
+  "id": "sweden-nature",
+  "title": {
+    "en": "Swedish nature",
+    "de": "Schwedens Natur",
+    "sv": "Svensk natur"
+  },
+  "emoji": "🦌",
+  "defaultMode": "tiles",
+  "pictures": [
+    {
+      "answer": "Älg (moose)",
+      "file": "File:Moose-Gustav.jpg",
+      "wiki": "sv:Älg"
+    },
+    {
+      "answer": "Ren (reindeer)",
+      "file": "File:20070818-0001-strolling reindeer cropped.jpg",
+      "wiki": "sv:Ren"
+    },
+    {
+      "answer": "Lodjur (lynx)",
+      "file": "File:Lynx lynx poing.jpg",
+      "wiki": "sv:Lodjur"
+    },
+    {
+      "answer": "Fjällräv (Arctic fox)",
+      "file": "File:Arcticfox-3.jpg",
+      "wiki": "sv:Fjällräv"
+    },
+    {
+      "answer": "Järv (wolverine)",
+      "file": "File:Järv1.jpg",
+      "wiki": "sv:Järv"
+    },
+    {
+      "answer": "Kungsörn (golden eagle)",
+      "file": "File:Maakotka (Aquila chrysaetos) by Jarkko Järvinen (crop).jpg",
+      "wiki": "sv:Kungsörn"
+    },
+    {
+      "answer": "Kantarell (chanterelle)",
+      "file": "File:Chanterelle Cantharellus cibarius.jpg",
+      "wiki": "sv:Kantarell"
+    },
+    {
+      "answer": "Hjortron (cloudberry)",
+      "file": "File:Hjortron.png",
+      "wiki": "sv:Hjortron"
+    },
+    {
+      "answer": "Lingon (lingonberry)",
+      "file": "File:Vaccinium vitis-idaea 20060824 003.jpg",
+      "wiki": "sv:Lingon"
+    },
+    {
+      "answer": "Blåbär (bilberry)",
+      "file": "File:Blåbär, Blueberry.jpg",
+      "wiki": "sv:Blåbär"
+    },
+    {
+      "answer": "Brunbjörn (brown bear)",
+      "file": "File:Brown bear (Ursus arctos arctos) running.jpg",
+      "wiki": "sv:Brunbjörn"
+    },
+    {
+      "answer": "Varg (wolf)",
+      "file": "File:Front view of a resting Canis lupus ssp.jpg",
+      "wiki": "sv:Varg"
+    },
+    {
+      "answer": "Ekorre (red squirrel)",
+      "file": "File:Kurre5.jpg",
+      "wiki": "sv:Ekorre"
+    },
+    {
+      "answer": "Igelkott (hedgehog)",
+      "file": "File:Erinaceus europaeus LC0119.jpg",
+      "wiki": "sv:Igelkott"
+    },
+    {
+      "answer": "Gädda (pike)",
+      "file": "File:Esox lucius ZOO 1.jpg",
+      "wiki": "sv:Gädda"
+    },
+    {
+      "answer": "Vitsippa (wood anemone)",
+      "file": "File:Gullringskärrets naturreservat maj 2021e.jpg",
+      "wiki": "sv:Vitsippa"
+    },
+    {
+      "answer": "Liljekonvalj (lily of the valley)",
+      "file": "File:Convallaria majalis - Köhler–s Medizinal-Pflanzen-045.jpg",
+      "wiki": "sv:Liljekonvalj"
+    },
+    {
+      "answer": "Blåsippa (liverleaf)",
+      "file": "File:Hepatica nobilis flowers.JPG",
+      "wiki": "sv:Blåsippa"
+    },
+    {
+      "answer": "Norrsken (northern lights)",
+      "file": "File:Aurora borealis over Eielson Air Force Base, Alaska.jpg",
+      "wiki": "sv:Norrsken"
+    },
+    {
+      "answer": "Lunnefågel (puffin)",
+      "file": "File:Puffin (Fratercula arctica).jpg",
+      "wiki": "sv:Lunnefågel"
+    },
+    {
+      "answer": "Röd flugsvamp (fly agaric)",
+      "file": "File:Röd flugsvamp.jpg",
+      "wiki": "sv:Flugsvamp"
+    },
+    {
+      "answer": "Kronhjort (red deer)",
+      "file": "File:RedDeerStag.jpg",
+      "wiki": "sv:Kronhjort"
+    },
+    {
+      "answer": "Midnattssol (midnight sun)",
+      "file": "File:Midnight sun.jpg",
+      "wiki": "en:Midnight sun"
+    }
+  ]
+}
